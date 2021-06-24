@@ -10,7 +10,7 @@ const Header = () => {
         expand='md'
         variant='dark'
         className='bg-dark'
-        style={{ fontWeight: '700', padding: '0', fontSize:'1.5rem' }}>
+        style={{ fontWeight: '700', padding: '0', fontSize: '1.5rem' }}>
         <Container className='d-flex flex-md-row'>
           <Navbar.Brand className='p-0 m-0' href='/'>
             <img
@@ -25,8 +25,11 @@ const Header = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto text-center d-flex flex-md-row justify-content-around'>
-              <Nav.Link className='' href='/about'>About</Nav.Link>
+              <Nav.Link className='' href='/about'>
+                About
+              </Nav.Link>
               <Nav.Link href='/blog'>Blog</Nav.Link>
+              <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/resources'>Resources</Nav.Link>
             </Nav>
             <Nav className='ms-auto'>

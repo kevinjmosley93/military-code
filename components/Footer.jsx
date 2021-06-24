@@ -4,20 +4,21 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className='bg-dark'>
-      <Container className=' text-light py-4 pt-5'>
+    <footer className='bg-dark pt-5'>
+      <Container className=' text-light'>
         <Row className='mb-5'>
           <Col sm={6} md={3}>
             <h1 id='footer__heading' classname='fw-bold mb-5'>
               ABOUT US
             </h1>
             <p>
-              We want to help every seperating veteran secure a job before their ETS date.
+              We want to help every seperating veteran secure a job before their
+              ETS date.
             </p>
           </Col>
           <Col sm={6} md={3}>
             <h1 id='footer__heading' classname='fw-bold mb-5'>
-              IMPORTANT LINKS
+              LINKS
             </h1>
             <ul className='footer-links'>
               <li>
@@ -81,10 +82,11 @@ const Footer = () => {
           style={{
             height: 'auto',
             margin: '0 auto',
-            fontWeight: '700'
+            fontSize: '.6rem'
           }}>
           <p className='text-center py-3 text-light mb-0'>
-            {new Date().getFullYear()} All Rights Reserved | MTC - Military Then Code™
+            {new Date().getFullYear()} All Rights Reserved | MTC - Military Then
+            Code™
           </p>
         </Container>
       </Container>
