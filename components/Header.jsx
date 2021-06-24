@@ -30,7 +30,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='ms-auto text-center d-flex flex-md-row justify-content-around'>
+            <Nav className='ms-auto text-center d-flex flex-md-row justify-content-around bg-dark'>
               <Nav.Link className='' href='/about'>
                 About
               </Nav.Link>
