@@ -7,11 +7,11 @@ const Blog = () => {
       <div className='row my-5 gx-5'>
         <div className='col-lg-4 mb-5'>
           <div className='card h-100 shadow border-0'>
-            <img
+            {/* <img
               className='card-img-top'
               src='https://dummyimage.com/600x350/ced4da/6c757d'
               alt='...'
-            />
+            /> */}
             <div className='card-body p-4'>
               <div className='badge bg-primary bg-gradient rounded-pill mb-2'>
                 News
@@ -29,11 +29,11 @@ const Blog = () => {
             <div className='card-footer p-4 pt-0 bg-transparent border-top-0'>
               <div className='d-flex align-items-end justify-content-between'>
                 <div className='d-flex align-items-center'>
-                  <img
+                  {/* <img
                     className='rounded-circle me-3'
                     src='https://dummyimage.com/40x40/ced4da/6c757d'
                     alt='...'
-                  />
+                  /> */}
                   <div className='small'>
                     <div className='fw-bold'>Kelly Rowan</div>
                     <div className='text-muted'>
@@ -47,11 +47,11 @@ const Blog = () => {
         </div>
         <div className='col-lg-4 mb-5'>
           <div className='card h-100 shadow border-0'>
-            <img
+            {/* <img
               className='card-img-top'
               src='https://dummyimage.com/600x350/adb5bd/495057'
               alt='...'
-            />
+            /> */}
             <div className='card-body p-4'>
               <div className='badge bg-primary bg-gradient rounded-pill mb-2'>
                 Media
@@ -70,11 +70,11 @@ const Blog = () => {
             <div className='card-footer p-4 pt-0 bg-transparent border-top-0'>
               <div className='d-flex align-items-end justify-content-between'>
                 <div className='d-flex align-items-center'>
-                  <img
+                  {/* <img
                     className='rounded-circle me-3'
                     src='https://dummyimage.com/40x40/ced4da/6c757d'
                     alt='...'
-                  />
+                  /> */}
                   <div className='small'>
                     <div className='fw-bold'>Josiah Barclay</div>
                     <div className='text-muted'>
@@ -88,11 +88,11 @@ const Blog = () => {
         </div>
         <div className='col-lg-4 mb-5'>
           <div className='card h-100 shadow border-0'>
-            <img
+            {/* <img
               className='card-img-top'
               src='https://dummyimage.com/600x350/6c757d/343a40'
               alt='...'
-            />
+            /> */}
             <div className='card-body p-4'>
               <div className='badge bg-primary bg-gradient rounded-pill mb-2'>
                 News
@@ -113,11 +113,11 @@ const Blog = () => {
             <div className='card-footer p-4 pt-0 bg-transparent border-top-0'>
               <div className='d-flex align-items-end justify-content-between'>
                 <div className='d-flex align-items-center'>
-                  <img
+                  {/* <img
                     className='rounded-circle me-3'
                     src='https://dummyimage.com/40x40/ced4da/6c757d'
                     alt='...'
-                  />
+                  /> */}
                   <div className='small'>
                     <div className='fw-bold'>Evelyn Martinez</div>
                     <div className='text-muted'>

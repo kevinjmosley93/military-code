@@ -121,6 +121,12 @@ const FeaturedJobs = () => {
             </div>
           </div>
         </div>
+        <a
+          style={{ margin: '0 auto' }}
+          href='#'
+          className='text-center d-block btn-lg p-2'>
+          View More
+        </a>
       </div>
     </div>
   )
