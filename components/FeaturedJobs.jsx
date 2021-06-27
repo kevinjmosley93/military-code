@@ -22,7 +22,7 @@ const FeaturedJobs = () => {
             jobs.map(({ JvId, JobTitle, Company, AccquisitionDate }) => {
               return (
                 <div key={JvId} className='col-md-4'>
-                  <div className='row g-0 border rounded overflow-hidden flex-md-row mb-5 shadow h-md-250 '>
+                  <div className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
                     <div className='col p-4 d-flex flex-column '>
                       <div className='mb-1 '>
                         Posted <span>{AccquisitionDate}</span>

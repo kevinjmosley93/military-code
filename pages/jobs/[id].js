@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import { fetchJobs, fetchJobsById } from '../../lib/Jobs/fetchJobs'
 
 export async function getStaticPaths() {
@@ -19,12 +18,9 @@ export async function getStaticProps({ params }) {
   return { props: { data } }
 }
 
-const id = ({ data }) => {
-  const router = useRouter()
-
-  const { id } = router.query
+const Id = ({ data }) => {
   const { JobTitle, Company, Description, Location, URL } = data
-  console.log(data, id)
+  console.log(data)
 
   return (
     <>
@@ -32,11 +28,11 @@ const id = ({ data }) => {
         {Company} is hiring {JobTitle} in {Location}
       </p>
       <div dangerouslySetInnerHTML={{ __html: Description }} />
-      <a target='_blank' className='text-dark' href={URL}>
+      <a target='_blank' rel='noreferrer' className='text-dark' href={URL}>
         Apply
       </a>
     </>
   )
 }
 
-export default id
+export default Id

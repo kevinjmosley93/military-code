@@ -1,7 +1,7 @@
 import React from 'react'
 
-const id = () => {
+const Id = () => {
   return <div>blog id page</div>
 }
 
-export default id
+export default Id
