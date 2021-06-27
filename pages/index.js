@@ -9,9 +9,7 @@ import { fetchJobs } from '../lib/Jobs/fetchJobs'
 
 export default function Home({ data }) {
   const [loading, setLoading] = useState(false)
-
   const [jobs, setJobs] = useState([])
-  if (data.length === 0) return
   const { Jobs } = data
 
   console.log(data)
@@ -21,7 +19,7 @@ export default function Home({ data }) {
     setLoading(true)
     setJobs(Jobs)
     setLoading(false)
-  }, [])
+  }, [Jobs])
   return (
     <>
       <main>
