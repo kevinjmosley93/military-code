@@ -35,10 +35,10 @@ const Blog = () => {
               <div className='card h-100 shadow border-0'>
                 <Image
                   width={150}
-                  height={250}
+                  height={200}
                   src={
                     blogImg ||
-                    'https://dummyimage.com/150x250/000000/dbd2db.png&text=Placeholder'
+                    'https://dummyimage.com/150x200/000000/dbd2db.png&text=Placeholder'
                   }
                   alt='cover img'
                 />

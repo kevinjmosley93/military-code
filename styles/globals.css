@@ -28,6 +28,11 @@ a {
   border-color: #5fa8d3;
   font-weight: 700;
 }
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .bg-overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url('https://cdn.pixabay.com/photo/2016/06/09/23/45/soldier-1447008_1280.jpg');
@@ -35,7 +40,7 @@ a {
   background-size: cover;
   background-position: center center;
   color: #fff;
-  height: 700px;
+  height: 600px;
 }
 .footer-links {
   list-style-type: none;

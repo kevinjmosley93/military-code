@@ -1,3 +1,4 @@
+import { JobProvider } from '../contexts/JobContext.js'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Head from 'next/head'
@@ -7,20 +8,42 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <JobProvider>
       <Head>
-        <title>MTC | Military Then Code </title>
+        <title>
+          MTC | Military Then Code - helping Veterans find jobs before their
+          seperation date
+        </title>
+        <link rel='icon' href='/dog-tag.png' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta property='og:type' content='website' />
         <meta
-          name='description'
-          content='#1 Blog for seperating veterans & active duty military personnel'
+          property='og:title'
+          name='title'
+          content='MTC | Military Then Code - helping Veterans find jobs before their ETS date'
         />
-        <link rel='icon' href='/favicon.ico' />
+        <meta
+          property='og:description'
+          name='description'
+          content='#1 Blog for seperating veterans & active duty military personnel to find available jobs and resources to find employment before their ETS date.'
+        />
+        <meta
+          property='og:image'
+          itemProp='image'
+          name='image'
+          content='/dog-tag.png'
+        />
+        <meta
+          property='og:keywords'
+          name='keywords'
+          content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
+        />
+        <meta property='og:author' name='author' content='MMGThemes' />
       </Head>
-
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </JobProvider>
   )
 }
 

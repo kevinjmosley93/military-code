@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Services from '../components/Services'
 import Blog from '../components/Blog'
 import Subscribe from '../components/Subscribe'
 import FeaturedJobs from '../components/FeaturedJobs'
-import { fetchJobs } from '../lib/Jobs/fetchJobs'
 
-export default function Home({ data }) {
-  const [loading, setLoading] = useState(false)
-  const [jobs, setJobs] = useState([])
-  const { Jobs } = data
-
-  console.log(data)
-
-  useEffect(() => {
-    if (!Jobs) return
-    setLoading(true)
-    setJobs(Jobs)
-    setLoading(false)
-  }, [Jobs])
+export default function Home() {
   return (
     <>
       <main>
@@ -27,16 +14,9 @@ export default function Home({ data }) {
         <About />
         <Services />
         <Blog />
-        <FeaturedJobs jobs={jobs} loading={loading} />
+        <FeaturedJobs />
         <Subscribe />
       </main>
     </>
   )
-}
-
-export async function getStaticProps(context) {
-  const { data } = await fetchJobs()
-  return {
-    props: { data }
-  }
 }

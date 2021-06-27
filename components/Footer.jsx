@@ -13,7 +13,7 @@ const Footer = () => {
             </h1>
             <p>
               We want to help every seperating veteran secure a job before their
-              ETS date.
+              seperation date.
             </p>
           </Col>
           <Col sm={6} md={3}>
