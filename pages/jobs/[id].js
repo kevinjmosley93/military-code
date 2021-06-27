@@ -2,8 +2,8 @@ import React from 'react'
 import { fetchJobs, fetchJobsById } from '../../lib/Jobs/fetchJobs'
 
 export async function getStaticPaths() {
-  const { data } = await fetchJobs()
-  const { Jobs } = data
+  const data = await fetchJobs()
+  const { Jobs } = data.data
   console.log(Jobs)
 
   const paths = Jobs.map(({ JvId }) => ({
