@@ -8,7 +8,7 @@ const Footer = () => {
       <Container className=' text-light'>
         <Row className='mb-5'>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-5'>
+            <h1 id='footer__heading' className='fw-bold mb-3'>
               ABOUT US
             </h1>
             <p>
@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
           </Col>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-5'>
+            <h1 id='footer__heading' className='fw-bold mb-3'>
               LINKS
             </h1>
             <ul className='footer-links'>
@@ -42,7 +42,7 @@ const Footer = () => {
             </ul>
           </Col>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-5'>
+            <h1 id='footer__heading' className='fw-bold mb-3'>
               LOCATION
             </h1>
             <div>
@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-5'>
+            <h1 id='footer__heading' className='fw-bold mb-3'>
               CONNECT
             </h1>
             <div className='social-icons d-flex flex-row justify-content-between'>

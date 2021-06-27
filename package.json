@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "airtable": "^0.11.1",
     "bootstrap": "^5.0.2",
+    "dotenv": "^10.0.0",
     "font-awesome": "^4.7.0",
+    "moment": "^2.29.1",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.1",

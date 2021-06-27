@@ -1,4 +1,3 @@
-
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Head from 'next/head'
@@ -11,13 +10,16 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>MTC | Military Then Code </title>
-        <meta name="description" content="#1 Blog for seperating veterans & active duty military personnel" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name='description'
+          content='#1 Blog for seperating veterans & active duty military personnel'
+        />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
-    <Header />
-    <Component {...pageProps} />
-    <Footer />
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </>
   )
 }
