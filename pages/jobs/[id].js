@@ -1,8 +1,13 @@
 import React, { useContext } from 'react'
+import { useRouter } from 'next/router'
 import { JobContext } from '../../contexts/JobContext'
 import { fetchJobs, fetchJobsById } from '../../lib/Jobs/fetchJobs'
 
 const Id = ({ data }) => {
+  const router = useRouter()
+
+  if (router.isFallback) return <div>Loading...</div>
+
   const {
     JobTitle,
     Company,
@@ -37,7 +42,7 @@ const Id = ({ data }) => {
 export default Id
 
 export async function getStaticPaths(context) {
-  const data = await fetchJobs('service', 'new york, new york')
+  const data = await fetchJobs('admin', 'TX')
   const { Jobs } = data.data
 
   console.log({ context })
