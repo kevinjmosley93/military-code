@@ -14,24 +14,24 @@ function MyApp({ Component, pageProps }) {
           MTC | Military Then Code - helping Veterans find jobs before their
           seperation date
         </title>
-        <link rel='icon' href='/dog-tag.png' />
+        <link rel='icon' href='/favicon.png' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
           name='title'
-          content='MTC | Military Then Code - helping Veterans find jobs before their ETS date'
+          content='MTC | Military Then Code - helping Veterans find jobs before their seperation date'
         />
         <meta
           property='og:description'
           name='description'
-          content='#1 Blog for seperating veterans & active duty military personnel to find available jobs and resources to find employment before their ETS date.'
+          content='#1 Blog for seperating veterans & active duty military personnel to find available jobs and resources to find employment before their seperation date.'
         />
         <meta
           property='og:image'
           itemProp='image'
           name='image'
-          content='/dog-tag.png'
+          content='/favicon.png'
         />
         <meta
           property='og:keywords'

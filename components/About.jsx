@@ -2,8 +2,8 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <div className='px-4 py-5 my-5 text-center'>
+    <div className='bg-light px-4 py-5 '>
+      <div className='text-center'>
         <h1 className='display-5 fw-bold'>The End is Near?</h1>
         <div className='col-lg-6 mx-auto'>
           <p className='lead mb-4'>

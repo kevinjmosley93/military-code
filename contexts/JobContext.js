@@ -9,8 +9,49 @@ const JobProvider = ({ children }) => {
 
   const [jobData, setJobData] = useState(null)
 
-  const getJobs = async () => {
-    const { data } = await fetchJobs()
+  const [formInput, setFormInput] = useState({
+    form: {
+      keyword: 'manager',
+      location: 'Chicago,IL',
+      radius: 25,
+      numOfRecords: 20
+    }
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = e => {
+    const updatedField = { [e.target.name]: e.target.value }
+    setFormInput(currState => {
+      const updatedForm = { ...currState.form, ...updatedField }
+      return { form: updatedForm }
+    })
+  }
+  const handleForm = async e => {
+    e.preventDefault()
+    const { keyword, location, radius, numOfRecords } = formInput.form
+
+    await getJobs(keyword, location, radius, numOfRecords)
+
+    setSubmitted(true)
+    if (submitted) {
+      setFormInput({
+        form: {
+          keyword: 'manager',
+          location: 'Chicago,IL',
+          radius: 25,
+          numOfRecords: 20
+        }
+      })
+      console.log({ submitted })
+    }
+  }
+
+  const {
+    form: { keyword, location, radius, numOfRecords }
+  } = formInput
+
+  const getJobs = async (keyword, location, radius, numOfRecords) => {
+    const { data } = await fetchJobs(keyword, location, radius, numOfRecords)
     const { Jobs } = data
     console.log(Jobs)
     setJobs(Jobs)
@@ -33,7 +74,11 @@ const JobProvider = ({ children }) => {
         getJobsById,
         jobData,
         setJobData,
-        jobIds
+        jobIds,
+        keyword,
+        location,
+        radius,
+        numOfRecords
       }}>
       {children}
     </JobContext.Provider>

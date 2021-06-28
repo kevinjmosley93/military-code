@@ -34,17 +34,16 @@ const Header = () => {
               <Nav.Link className='' href='/about'>
                 About
               </Nav.Link>
-              <Nav.Link href='/blog'>Blog</Nav.Link>
+              {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/resources'>Resources</Nav.Link>
             </Nav>
-            <Nav className='ms-auto'>
+            <Nav>
               <Button
                 as='a'
-                target='_blank'
                 href='/contact'
                 className='text-light bg-primary bg-gradient rounded'
-                variant='info'
+                variant='primary'
                 size='lg'>
                 Contact
               </Button>
