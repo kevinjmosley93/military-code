@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import Link from 'next/link'
-import { Modal, Button } from 'react-bootstrap/'
 import { JobContext } from '../contexts/JobContext'
 
 const FeaturedJobs = () => {
@@ -26,7 +25,7 @@ const FeaturedJobs = () => {
       <div className='p-3 container text-light bg-dark rounded'>
         <div className='row my-5'>
           {jobs &&
-            jobs.map(({ JvId, JobTitle, Company, AccquisitionDate }) => {
+            jobs.map(({ JvId, JobTitle, Company }) => {
               return (
                 <div key={JvId} className='col-md-12'>
                   <div className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
