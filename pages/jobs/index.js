@@ -4,7 +4,7 @@ import { JobContext } from '../../contexts/JobContext'
 
 import Link from 'next/link'
 
-const index = () => {
+const Index = () => {
   const { jobs, getJobs, keyword, location, radius, numOfRecords } =
     useContext(JobContext)
 
@@ -64,4 +64,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
