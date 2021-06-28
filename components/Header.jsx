@@ -13,11 +13,10 @@ const Header = () => {
         style={{
           fontWeight: '700',
           padding: '0',
-          fontSize: '1.5rem',
-          height: '80px'
+          fontSize: '1.5rem'
         }}>
         <Container className='d-flex flex-md-row'>
-          <Navbar.Brand className='p-0 m-0' href='/'>
+          <Navbar.Brand className='py-3 m-0' href='/'>
             {/* <img
               style={{ objectFit: 'contain' }}
               width='100px'
@@ -30,7 +29,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='ms-auto text-center d-flex flex-md-row justify-content-around bg-dark'>
+            <Nav className='ms-auto text-center bg-dark'>
               <Nav.Link className='' href='/about'>
                 About
               </Nav.Link>
@@ -42,7 +41,7 @@ const Header = () => {
               <Button
                 as='a'
                 href='/contact'
-                className='text-light bg-primary bg-gradient rounded'
+                className='text-light bg-primary bg-gradient rounded mb-2'
                 variant='primary'
                 size='lg'>
                 Contact

@@ -25,13 +25,15 @@ const FeaturedJobs = () => {
       <div className='p-3 container text-light bg-dark rounded'>
         <div className='row my-5'>
           {jobs &&
-            jobs.map(({ JvId, JobTitle, Company }) => {
+            jobs.map(({ JvId, JobTitle, Company, Location }) => {
               return (
                 <div key={JvId} className='col-md-12'>
                   <div className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
                     <div className='col p-4 d-flex flex-column '>
                       <h3 className=''>{JobTitle}</h3>
-                      <p className='my-2'>{Company}</p>
+                      <p className='my-2'>
+                        {Company} is hiring in {Location}
+                      </p>
                     </div>
                   </div>
                 </div>
