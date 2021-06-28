@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
-import { JobContext } from '../../contexts/JobContext'
 import { fetchJobs, fetchJobsById } from '../../lib/Jobs/fetchJobs'
 
 const Id = ({ data }) => {
@@ -41,17 +40,16 @@ const Id = ({ data }) => {
 
 export default Id
 
-export async function getStaticPaths(context) {
+export async function getStaticPaths() {
   const data = await fetchJobs('admin', 'TX')
   const { Jobs } = data.data
 
-  console.log({ context })
   console.log(Jobs)
 
   const paths = Jobs.map(({ JvId }) => ({
     params: { id: JvId }
   }))
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {

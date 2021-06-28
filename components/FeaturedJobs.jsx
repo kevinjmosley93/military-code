@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Link from 'next/link'
+import { Modal, Button } from 'react-bootstrap/'
+import { JobContext } from '../contexts/JobContext'
 
-const FeaturedJobs = ({ jobs, getJobs, keyword, location }) => {
+const FeaturedJobs = () => {
+  const { jobs, getJobs, keyword, location } = useContext(JobContext)
+
   useEffect(() => {
     getJobs(keyword, location)
   }, [])
@@ -29,9 +33,6 @@ const FeaturedJobs = ({ jobs, getJobs, keyword, location }) => {
                     <div className='col p-4 d-flex flex-column '>
                       <h3 className=''>{JobTitle}</h3>
                       <p className='my-2'>{Company}</p>
-                      <Link href={`/jobs/${JvId}`}>
-                        <a className='mx-auto'>View Job</a>
-                      </Link>
                     </div>
                   </div>
                 </div>

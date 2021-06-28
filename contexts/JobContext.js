@@ -11,8 +11,8 @@ const JobProvider = ({ children }) => {
 
   const [formInput, setFormInput] = useState({
     form: {
-      keyword: 'veterans',
-      location: 'Chicago,IL'
+      keyword: 'admin',
+      location: 'Tx'
     }
   })
   const [submitted, setSubmitted] = useState(false)
@@ -34,8 +34,8 @@ const JobProvider = ({ children }) => {
     if (submitted) {
       setFormInput({
         form: {
-          keyword: 'veterans',
-          location: 'Chicago,IL'
+          keyword: 'admin',
+          location: 'Tx'
         }
       })
       console.log({ submitted })
