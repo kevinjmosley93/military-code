@@ -15,11 +15,6 @@ const Id = ({ data }) => {
 
   return (
     <>
-      <div className='pages__bg-overlay'>
-        <div className='vertical-center'>
-          <h1 className='text-center px-auto py-3'>Jobs</h1>
-        </div>
-      </div>
       <div className='container  pb-3'>
         <h1 className='text-center py-3'>
           {Company} is looking for a {JobTitle} in {Location}
@@ -41,16 +36,17 @@ const Id = ({ data }) => {
 
 export default Id
 
-export async function getStaticPaths() {
-  const data = await fetchJobs('manager', 'Chicago,IL', 25, 20)
+export async function getStaticPaths(context) {
+  const data = await fetchJobs('service', 'new york, new york')
   const { Jobs } = data.data
 
+  console.log({ context })
   console.log(Jobs)
 
   const paths = Jobs.map(({ JvId }) => ({
     params: { id: JvId }
   }))
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params }) {

@@ -9,7 +9,7 @@ import FeaturedJobs from '../components/FeaturedJobs'
 import { JobContext } from '../contexts/JobContext'
 
 export default function Home() {
-  const { jobs, getJobs } = useContext(JobContext)
+  const { jobs, getJobs, keyword, location } = useContext(JobContext)
 
   return (
     <>
@@ -18,7 +18,12 @@ export default function Home() {
         <About />
         <Services />
         {/* <Blog /> */}
-        <FeaturedJobs jobs={jobs} getJobs={getJobs} />
+        <FeaturedJobs
+          jobs={jobs}
+          getJobs={getJobs}
+          keyword={keyword}
+          location={location}
+        />
         <Subscribe />
       </main>
     </>

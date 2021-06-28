@@ -5,11 +5,10 @@ import { JobContext } from '../../contexts/JobContext'
 import Link from 'next/link'
 
 const Index = () => {
-  const { jobs, getJobs, keyword, location, radius, numOfRecords } =
-    useContext(JobContext)
+  const { jobs, getJobs, keyword, location } = useContext(JobContext)
 
   useEffect(() => {
-    getJobs(keyword, location, radius, numOfRecords)
+    getJobs(keyword, location)
   }, [])
 
   if (!jobs)
@@ -38,7 +37,7 @@ const Index = () => {
             {jobs &&
               jobs.map(({ JvId, JobTitle, Company, AccquisitionDate }) => {
                 return (
-                  <div key={JvId} className='col-md-4'>
+                  <div key={JvId} className='col-md-6'>
                     <div className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
                       <div className='col p-4 d-flex flex-column '>
                         <h3 className=''>{JobTitle}</h3>

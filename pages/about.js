@@ -8,13 +8,13 @@ const about = () => {
         <div className='container px-5'>
           <div className='row align-items-center'>
             <div className='col-md-7'>
-              <div className='text-center my-5'>
-                <h1 className='fw-bolder mb-3'>
+              <div className=' my-5'>
+                <h1 className='fw-bolder text-center mb-3'>
                   We help veterans secure jobs before their seperation date.
                 </h1>
                 <p
                   style={{ lineHeight: '2.5rem' }}
-                  className='lead fw-normal text-muted mb-4'>
+                  className='lead fw-normal text-left text-muted mb-4'>
                   We were started in 2020 by a U.S. Navy veteran. The pandemic
                   made it hard for people of all walks of life to adjust to the
                   hard times but our veterans always end up with the short end

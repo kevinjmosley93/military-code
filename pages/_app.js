@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>
           MTC | Military Then Code - helping Veterans find jobs before their
-          seperation date
+          separation date
         </title>
         <link rel='icon' href='/favicon.png' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
@@ -20,12 +20,12 @@ function MyApp({ Component, pageProps }) {
         <meta
           property='og:title'
           name='title'
-          content='MTC | Military Then Code - helping Veterans find jobs before their seperation date'
+          content='MTC | Military Then Code - helping Veterans find jobs before their separation date'
         />
         <meta
           property='og:description'
           name='description'
-          content='#1 Blog for seperating veterans & active duty military personnel to find available jobs and resources to find employment before their seperation date.'
+          content='#1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
         />
         <meta
           property='og:image'

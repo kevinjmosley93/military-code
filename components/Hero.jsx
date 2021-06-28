@@ -6,10 +6,10 @@ const Hero = () => {
     <div className='bg-overlay'>
       <Container className='vertical-center'>
         <div className=' d-flex flex-column justify-content-around px-4 py-2 text-center'>
-          <h1 style={{ fontSize: '3rem' }} className='fw-bold mb-2'>
+          <h1 style={{ fontSize: '2rem' }} className='fw-bold mb-2'>
             MTC | Military Then Code
           </h1>
-          <p style={{ fontSize: '1.5rem' }}>
+          <p style={{ fontSize: '1rem' }}>
             We are the #1 Blog for seperating veterans & active duty military
             personnel.
           </p>

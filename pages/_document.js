@@ -13,18 +13,18 @@ class MyDocument extends Document {
           <meta
             property='og:title'
             name='title'
-            content='MTC | Military Then Code - helping Veterans find jobs before their seperation date'
+            content='MTC | Military Then Code - helping Veterans find jobs before their separation date'
           />
           <meta
             property='og:description'
             name='description'
-            content='#1 Blog for seperating veterans & active duty military personnel to find available jobs and resources to find employment before their seperation date.'
+            content='#1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
           />
           <meta
             property='og:image'
             itemProp='image'
             name='image'
-            content='//favicon.png'
+            content='/favicon.png'
           />
           <meta
             property='og:keywords'

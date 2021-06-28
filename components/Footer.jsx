@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className='bg-dark pt-5'>
+    <footer className='bg-dark bg-gradient pt-5'>
       <Container className=' text-light'>
         <Row className='mb-5'>
           <Col sm={6} md={3}>
@@ -43,21 +43,18 @@ const Footer = () => {
           </Col>
           <Col sm={6} md={3}>
             <h1 id='footer__heading' className='fw-bold mb-3'>
-              LOCATION
+              CONTACT
             </h1>
             <div>
               {' '}
               <div>Military Then Code</div>
-              <div>
-                1951 W 21st St <br />
-                Broadview, IL 60155
-                <br />
-                <a href='#'>info@militarythencode.com</a>
-              </div>
+              <a rel='noreferrer' href='mailto:militarythencode@gmail.com'>
+                info@militarythencode.com
+              </a>
             </div>
           </Col>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-3'>
+            <h1 id='footer__heading' className='fw-bold mb-3 '>
               CONNECT
             </h1>
             <div className='social-icons d-flex flex-row justify-content-between'>

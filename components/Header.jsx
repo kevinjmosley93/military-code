@@ -14,7 +14,7 @@ const Header = () => {
           fontWeight: '700',
           padding: '0',
           fontSize: '1.5rem',
-          height: '60px'
+          height: '80px'
         }}>
         <Container className='d-flex flex-md-row'>
           <Navbar.Brand className='p-0 m-0' href='/'>

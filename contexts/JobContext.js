@@ -11,10 +11,8 @@ const JobProvider = ({ children }) => {
 
   const [formInput, setFormInput] = useState({
     form: {
-      keyword: 'manager',
-      location: 'Chicago,IL',
-      radius: 25,
-      numOfRecords: 20
+      keyword: 'veterans',
+      location: 'Chicago,IL'
     }
   })
   const [submitted, setSubmitted] = useState(false)
@@ -36,10 +34,8 @@ const JobProvider = ({ children }) => {
     if (submitted) {
       setFormInput({
         form: {
-          keyword: 'manager',
-          location: 'Chicago,IL',
-          radius: 25,
-          numOfRecords: 20
+          keyword: 'veterans',
+          location: 'Chicago,IL'
         }
       })
       console.log({ submitted })
@@ -47,11 +43,11 @@ const JobProvider = ({ children }) => {
   }
 
   const {
-    form: { keyword, location, radius, numOfRecords }
+    form: { keyword, location }
   } = formInput
 
-  const getJobs = async (keyword, location, radius, numOfRecords) => {
-    const { data } = await fetchJobs(keyword, location, radius, numOfRecords)
+  const getJobs = async (keyword, location) => {
+    const { data } = await fetchJobs(keyword, location)
     const { Jobs } = data
     console.log(Jobs)
     setJobs(Jobs)
@@ -76,9 +72,7 @@ const JobProvider = ({ children }) => {
         setJobData,
         jobIds,
         keyword,
-        location,
-        radius,
-        numOfRecords
+        location
       }}>
       {children}
     </JobContext.Provider>

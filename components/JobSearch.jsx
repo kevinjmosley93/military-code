@@ -11,7 +11,7 @@ const JobSearch = () => {
             <div className='content'>
               <form method='' action=''>
                 <div className='row'>
-                  <div className='col-md-3'>
+                  <div className='col-md-5'>
                     <div className='form-group'>
                       <input
                         className='form-control mb-2 w-100'
@@ -20,7 +20,7 @@ const JobSearch = () => {
                       />
                     </div>
                   </div>
-                  <div className='col-md-3'>
+                  <div className='col-md-5'>
                     <div className='form-group'>
                       <input
                         className='form-control mb-2 w-100'
@@ -29,25 +29,7 @@ const JobSearch = () => {
                       />
                     </div>
                   </div>
-                  <div className='col-md-3'>
-                    <div className='form-group'>
-                      <input
-                        className='form-control mb-2 w-100'
-                        type='number'
-                        placeholder='Mile Radius'
-                      />
-                    </div>
-                  </div>
                   <div className='col-md-2'>
-                    <div className='form-group'>
-                      <input
-                        className='form-control mb-2 w-100'
-                        type='number'
-                        placeholder='Number of Records'
-                      />
-                    </div>
-                  </div>
-                  <div className='col-md-1'>
                     <button
                       type='button'
                       className='btn btn-primary btn-md px-5'>
