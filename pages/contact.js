@@ -24,7 +24,7 @@ const contact = () => {
                     type='text'
                     placeholder='Enter your name...'
                   />
-                  <label HtmlFor='inputName'>Full name</label>
+                  <label htmlFor='inputName'>Full name</label>
                 </div>
                 <div className='form-floating mb-3'>
                   <input
@@ -33,7 +33,7 @@ const contact = () => {
                     type='email'
                     placeholder='name@example.com'
                   />
-                  <label HtmlFor='inputEmail'>Email address</label>
+                  <label htmlFor='inputEmail'>Email address</label>
                 </div>
                 <div className='form-floating mb-3'>
                   <input
@@ -42,7 +42,7 @@ const contact = () => {
                     type='tel'
                     placeholder='(123) 456-7890'
                   />
-                  <label HtmlFor='inputPhone'>Phone number</label>
+                  <label htmlFor='inputPhone'>Phone number</label>
                 </div>
                 <div className='form-floating mb-3'>
                   <textarea
@@ -51,7 +51,7 @@ const contact = () => {
                     type='text'
                     placeholder='Enter your message here...'
                     style={{ height: '10rem' }}></textarea>
-                  <label HtmlFor='inputMessage'>Message</label>
+                  <label htmlFor='inputMessage'>Message</label>
                 </div>
               </form>
             </div>
