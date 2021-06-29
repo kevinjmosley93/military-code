@@ -19,10 +19,10 @@ const Header = () => {
         <Container className='d-flex flex-md-row'>
           <Navbar.Brand href='/'>
             <Image
-              width={80}
-              height={70}
+              width={100}
+              height={65}
               alt='logo'
-              src='https://i.imgur.com/zjGL6Uj.png'
+              src='https://i.imgur.com/jXeggwV.png'
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
