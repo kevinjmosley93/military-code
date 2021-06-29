@@ -79,7 +79,7 @@ const FeaturedJobs = () => {
                           </a>
                         </div>
                       </div>
-                      <div className='container mt-2'>
+                      <div className='container mt-2 overflow-hidden'>
                         {expanded && JvId === uid && jobData && (
                           <>
                             <div
