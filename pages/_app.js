@@ -5,6 +5,7 @@ import Head from 'next/head'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import '../styles/globals.css'
+import '../styles/paginate.css'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,12 @@ function MyApp({ Component, pageProps }) {
           separation date
         </title>
         <link rel='icon' href='/favicon.png' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap'
+          rel='stylesheet'
+        />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:type' content='website' />
         <meta

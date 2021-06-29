@@ -1,11 +1,13 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
 .navbar-toggler,
 .navbar-toggler:focus,
 .navbar-toggler:active,

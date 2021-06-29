@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import JobSearch from '../../components/JobSearch'
 import { JobContext } from '../../contexts/JobContext'
+import Pagination from '../../helpers/paginate'
 
 const Index = () => {
   const [expanded, setExpanded] = useState(false)
@@ -8,6 +9,14 @@ const Index = () => {
 
   const { jobs, getJobs, getJobsById, keyword, location, setJobData, jobData } =
     useContext(JobContext)
+
+  const data = jobs || []
+
+  const { filteredData, paginationJsx } = Pagination({
+    data
+  })
+
+  console.log({ filteredData })
 
   const handleClick = async id => {
     try {
@@ -33,7 +42,7 @@ const Index = () => {
       </div>
     )
 
-  console.log({ jobs })
+  // console.log({ jobs })
 
   return (
     <>
@@ -47,7 +56,7 @@ const Index = () => {
         <div className=' container'>
           <div className='row my-5'>
             {jobs &&
-              jobs.map(({ JvId, JobTitle, Company, Location, URL }) => {
+              filteredData.map(({ JvId, JobTitle, Company, Location, URL }) => {
                 return (
                   <div key={JvId} className='col-md-6'>
                     <div
@@ -61,6 +70,7 @@ const Index = () => {
                           console.error(err)
                         }
                       }}
+                      style={{ cursor: 'pointer' }}
                       className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
                       <div className='col p-4 d-flex flex-column '>
                         <h3>{JobTitle}</h3>
@@ -91,7 +101,7 @@ const Index = () => {
                                 href={URL}
                                 style={{ margin: '0 auto' }}
                                 className='text-center d-block btn-lg p-2'>
-                                Link to Apply
+                                Apply for Job
                               </a>
                             </>
                           )}
@@ -103,6 +113,7 @@ const Index = () => {
               })}
           </div>
         </div>
+        {paginationJsx()}
       </div>
     </>
   )

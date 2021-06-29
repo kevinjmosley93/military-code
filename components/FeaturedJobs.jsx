@@ -2,12 +2,21 @@ import React, { useEffect, useContext, useState } from 'react'
 import Link from 'next/link'
 import { JobContext } from '../contexts/JobContext'
 import JobSearch from './JobSearch'
+import Pagination from '../helpers/paginate'
 
 const FeaturedJobs = () => {
   const [expanded, setExpanded] = useState(false)
   const [uid, setUid] = useState(null)
   const { jobs, getJobs, getJobsById, keyword, location, setJobData, jobData } =
     useContext(JobContext)
+
+  const data = jobs || []
+
+  const { filteredData, paginationJsx } = Pagination({
+    data
+  })
+
+  console.log({ filteredData })
 
   const handleClick = async id => {
     try {
@@ -31,16 +40,16 @@ const FeaturedJobs = () => {
       </div>
     )
 
-  console.log({ jobs })
+  // console.log({ jobs })
 
   return (
     <div className='bg-light  py-5'>
       <h1 className='text-center pb-2'>Featured Jobs</h1>
       <JobSearch />
       <div className='p-3 mt-3 container text-light bg-dark rounded'>
-        <div className='row my-5'>
+        <div className='row my-3'>
           {jobs &&
-            jobs.map(({ JvId, JobTitle, Company, Location }) => {
+            filteredData.map(({ JvId, JobTitle, Company, Location }) => {
               return (
                 <div key={JvId} className='col-md-12'>
                   <div
@@ -54,6 +63,7 @@ const FeaturedJobs = () => {
                         console.error(err)
                       }
                     }}
+                    style={{ cursor: 'pointer' }}
                     className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250'>
                     <div className='col p-4 d-flex flex-column '>
                       <h3>{JobTitle}</h3>
@@ -84,7 +94,7 @@ const FeaturedJobs = () => {
                               href={jobData.URL}
                               style={{ margin: '0 auto' }}
                               className='text-center d-block btn-lg p-2'>
-                              Link to Apply
+                              Apply for Job
                             </a>
                           </>
                         )}
@@ -95,13 +105,7 @@ const FeaturedJobs = () => {
               )
             })}
         </div>
-        <Link href={'/jobs'}>
-          <a
-            style={{ margin: '0 auto' }}
-            className='text-center d-block btn-lg p-2'>
-            View More
-          </a>
-        </Link>
+        {paginationJsx()}
       </div>
     </div>
   )
