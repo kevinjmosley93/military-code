@@ -22,7 +22,7 @@ const about = () => {
                   a smooth transition from active duty into a second career
                   without the military. Our job is to give you all of the
                   resources and tools you need to find employment during
-                  termanil leave or sooner. Some of our resources include:
+                  terminal leave or sooner. Some of our resources include:
                   Resume Writing Best Practices, Interview Tips and Job Board
                   Profile set-ups. We pride ourselves in having the most
                   up-to-date information on jobs and career resources.
