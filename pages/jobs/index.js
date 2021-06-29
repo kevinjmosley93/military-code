@@ -113,7 +113,9 @@ const Index = () => {
               })}
           </div>
         </div>
-        {paginationJsx()}
+        {/* <div style={{ maxWidth: 'fit-content' }} className=''>
+          {paginationJsx()}
+        </div> */}
       </div>
     </>
   )
