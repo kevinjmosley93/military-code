@@ -14,7 +14,7 @@ const about = () => {
                 </h1>
                 <p
                   style={{ lineHeight: '2.5rem' }}
-                  className='lead fw-normal text-left text-muted mb-4'>
+                  className='lead fw-normal text-justify text-muted mb-4'>
                   We were started in 2020 by a U.S. Navy veteran. The pandemic
                   made it hard for people of all walks of life to adjust to the
                   hard times but our veterans always end up with the short end

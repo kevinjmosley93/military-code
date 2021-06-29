@@ -15,7 +15,6 @@ const JobProvider = ({ children }) => {
       location: 'Tx'
     }
   })
-  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = e => {
     const updatedField = { [e.target.name]: e.target.value }
@@ -25,20 +24,13 @@ const JobProvider = ({ children }) => {
     })
   }
   const handleForm = async e => {
-    e.preventDefault()
-    const { keyword, location, radius, numOfRecords } = formInput.form
+    try {
+      e.preventDefault()
+      const { keyword, location } = formInput.form
 
-    await getJobs(keyword, location, radius, numOfRecords)
-
-    setSubmitted(true)
-    if (submitted) {
-      setFormInput({
-        form: {
-          keyword: 'admin',
-          location: 'Tx'
-        }
-      })
-      console.log({ submitted })
+      await getJobs(keyword, location)
+    } catch (err) {
+      console.error(err)
     }
   }
 
@@ -47,17 +39,25 @@ const JobProvider = ({ children }) => {
   } = formInput
 
   const getJobs = async (keyword, location) => {
-    const { data } = await fetchJobs(keyword, location)
-    const { Jobs } = data
-    console.log(Jobs)
-    setJobs(Jobs)
-    return Jobs
+    try {
+      const { data } = await fetchJobs(keyword, location)
+      const { Jobs } = data
+      console.log(Jobs)
+      setJobs(Jobs)
+      return Jobs
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   const getJobsById = async id => {
-    const { data } = await fetchJobsById(id)
-    console.log(data)
-    return data
+    try {
+      const { data } = await fetchJobsById(id)
+      console.log(data)
+      return data
+    } catch (err) {
+      console.error(err)
+    }
   }
   const jobIds = jobs && jobs.map(({ JvId }) => JvId)
 
@@ -72,7 +72,11 @@ const JobProvider = ({ children }) => {
         setJobData,
         jobIds,
         keyword,
-        location
+        location,
+        formInput,
+        setFormInput,
+        handleChange,
+        handleForm
       }}>
       {children}
     </JobContext.Provider>

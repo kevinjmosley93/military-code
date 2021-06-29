@@ -1,19 +1,24 @@
 import React, { useEffect, useContext, useState } from 'react'
+import { JobContext } from '../contexts/JobContext'
 
 const JobSearch = () => {
+  const { handleChange, handleForm, keyword, location } = useContext(JobContext)
+
   return (
     <>
       <div className='container h-100'>
-        <h1 className='text-center px-auto py-3'>Search Jobs</h1>
         <div className='row m-2'>
           <div className='col-md-12'>
             <h4 className='text-center'>Find the job that fits your life</h4>
             <div className='content'>
-              <form method='' action=''>
+              <form onSubmit={handleForm}>
                 <div className='row'>
                   <div className='col-md-5'>
                     <div className='form-group'>
                       <input
+                        name='keyword'
+                        value={keyword}
+                        onChange={handleChange}
                         className='form-control mb-2 w-100'
                         type='text'
                         placeholder='job title / keywords'
@@ -23,6 +28,9 @@ const JobSearch = () => {
                   <div className='col-md-5'>
                     <div className='form-group'>
                       <input
+                        name='location'
+                        value={location}
+                        onChange={handleChange}
                         className='form-control mb-2 w-100'
                         type='text'
                         placeholder='city / state / zip code'
@@ -31,8 +39,8 @@ const JobSearch = () => {
                   </div>
                   <div className='col-md-2'>
                     <button
-                      type='button'
-                      className='btn btn-primary btn-md px-5'>
+                      type='submit'
+                      className='bg-gradient btn-primary btn-md px-3 py-1'>
                       <i className='fa fa-search' aria-hidden='true'></i>
                     </button>
                   </div>
