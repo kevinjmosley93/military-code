@@ -12,7 +12,7 @@ const JobSearch = () => {
             <h4 className='text-center'>Find the job that fits your life</h4>
             <div className='content'>
               <form onSubmit={handleForm}>
-                <div className='row'>
+                <div className='row justify-content-center'>
                   <div className='col-md-5'>
                     <div className='form-group'>
                       <input
