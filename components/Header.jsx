@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Nav, Navbar, Button, Container } from 'react-bootstrap'
 
 const Header = () => {
@@ -16,23 +17,18 @@ const Header = () => {
           fontSize: '1.5rem'
         }}>
         <Container className='d-flex flex-md-row'>
-          <Navbar.Brand className='py-3 m-0' href='/'>
-            {/* <img
-              style={{ objectFit: 'contain' }}
-              width='100px'
-              height='70px'
-              margin='0'
+          <Navbar.Brand href='/'>
+            <Image
+              width={80}
+              height={70}
               alt='logo'
-              src='https://i.imgur.com/Wdpfi2R.png'
-            /> */}
-            MTC
+              src='https://i.imgur.com/zjGL6Uj.png'
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto text-center bg-dark'>
-              <Nav.Link className='' href='/about'>
-                About
-              </Nav.Link>
+              <Nav.Link href='/about'>About</Nav.Link>
               {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/resources'>Resources</Nav.Link>

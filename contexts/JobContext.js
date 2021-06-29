@@ -11,7 +11,7 @@ const JobProvider = ({ children }) => {
 
   const [formInput, setFormInput] = useState({
     form: {
-      keyword: 'admin',
+      keyword: 'veterans',
       location: 'Tx'
     }
   })
