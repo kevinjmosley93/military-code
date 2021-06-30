@@ -15,9 +15,11 @@ const Services = () => {
               Your first step to finding a job is looking at what there is a
               demand for. Search Jobs in industries that best match your skills.
             </p>
-            <a style={{ margin: '0 auto' }} href='#' className='icon-link'>
-              View Jobs
-            </a>
+            <Link href='/jobs'>
+              <a style={{ margin: '0 auto' }} className='icon-link'>
+                View Jobs
+              </a>
+            </Link>
           </div>
           <div className='feature col-md-4 shadow border rounded py-3'>
             <div className='feature-icon text-center mb-2'>
@@ -29,9 +31,11 @@ const Services = () => {
               using learning a valuable trade. Most programs allow you to use
               your G.I. Bill as well.
             </p>
-            <a style={{ margin: '0 auto' }} href='#' className='icon-link'>
-              View Apprenticeships
-            </a>
+            <Link href='/resources'>
+              <a style={{ margin: '0 auto' }} className='icon-link'>
+                View Apprenticeships
+              </a>
+            </Link>
           </div>
           <div className='feature col-md-4 shadow py-3 border rounded'>
             <div className='feature-icon text-center mb-2'>
@@ -43,9 +47,11 @@ const Services = () => {
               Contacting the centers closest to where you will be getting out is
               the first step to landing a job.
             </p>
-            <a style={{ margin: '0 auto' }} href='#' className='icon-link'>
-              View Centers
-            </a>
+            <Link href='/resources'>
+              <a style={{ margin: '0 auto' }} className='icon-link'>
+                View Centers
+              </a>
+            </Link>
           </div>
         </div>
       </div>

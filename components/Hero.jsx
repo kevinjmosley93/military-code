@@ -14,13 +14,14 @@ const Hero = () => {
             personnel.
           </p>
           <div className='d-grid gap-3 d-sm-flex mt-3 justify-content-sm-center'>
-            <Button
-              as='a'
-              variant='info'
-              href='/about'
-              className=' btn-lg px-4 bg-primary bg-gradient text-light gap-3'>
-              What We Do
-            </Button>
+            <Link href='/about'>
+              <Button
+                as='a'
+                variant='info'
+                className=' btn-lg px-4 bg-primary bg-gradient text-light gap-3'>
+                What We Do
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
