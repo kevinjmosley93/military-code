@@ -12,8 +12,8 @@ const Footer = () => {
               ABOUT US
             </h1>
             <p>
-              We want to help every seperating veteran secure a job before their
-              seperation date.
+              We want to help every separating veteran secure a job before their
+              separation date.
             </p>
           </Col>
           <Col sm={6} md={3}>

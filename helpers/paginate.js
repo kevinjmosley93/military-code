@@ -29,40 +29,37 @@ export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {
   }
   const paginationJsx = () => {
     return (
-      <section className='pagination'>
-        <button
-          as='a'
-          variant='primary'
-          onClick={goToPreviousPage}
-          className={`prev ${currentPage === 1 ? 'disabled' : ''}`}>
-          prev
-        </button>
-
-        {getPaginationGroup().map((item, index) => (
+      <nav aria-label='job pagination' className='paginate '>
+        <ul className='pagination-lg justify-content-sm-end justify-content-center d-flex flex-row p-0'>
           <button
-            as='a'
-            variant='primary'
-            key={index}
-            onClick={changePage}
-            className={`paginationItem ${
-              currentPage === item ? 'active' : null
-            }`}>
-            <span>{item}</span>
+            onClick={goToPreviousPage}
+            className={` ${
+              currentPage === 1 ? 'disabled' : ''
+            } badge p-2 bg-primary bg-gradient`}>
+            <i className='fa fa-arrow-circle-left' aria-hidden='true'></i>
           </button>
-        ))}
-
-        {currentPage === pageLimit ? (
-          ''
-        ) : (
-          <button
-            as='a'
-            variant='primary'
-            onClick={goToNextPage}
-            className={`next`}>
-            next
-          </button>
-        )}
-      </section>
+          {getPaginationGroup().map((item, index) => (
+            <li key={index} onClick={changePage} className='page-item'>
+              <button
+                style={{ paddingInline: '.3rem' }}
+                className={` ${
+                  currentPage === item ? 'active' : ''
+                } page-link p-2`}>
+                <span className=''>{item}</span>
+              </button>
+            </li>
+          ))}
+          {currentPage === pageLimit ? (
+            ''
+          ) : (
+            <button
+              onClick={goToNextPage}
+              className={`badge p-2 bg-primary bg-gradient`}>
+              <i className='fa fa-arrow-circle-right' aria-hidden='true'></i>
+            </button>
+          )}
+        </ul>
+      </nav>
     )
   }
   const filteredData = getPaginatedData().map(info => info)

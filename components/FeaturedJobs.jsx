@@ -105,7 +105,7 @@ const FeaturedJobs = () => {
               )
             })}
         </div>
-        {/* <div className='container'>{paginationJsx()}</div> */}
+        {paginationJsx()}
       </div>
     </div>
   )

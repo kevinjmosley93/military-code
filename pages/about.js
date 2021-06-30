@@ -10,7 +10,7 @@ const about = () => {
             <div className='col-md-7'>
               <div className=' my-5'>
                 <h1 className='fw-bolder text-center mb-3'>
-                  We help veterans secure jobs before their seperation date.
+                  We help veterans secure jobs before their separation date.
                 </h1>
                 <p
                   style={{ lineHeight: '2.5rem' }}

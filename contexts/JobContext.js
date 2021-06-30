@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 
 import { fetchJobs, fetchJobsById } from '../lib/Jobs/fetchJobs'
+import { fetchJobCenters } from '../lib/Jobs/fetchJobCenters'
 
 const JobContext = createContext()
 
@@ -8,6 +9,8 @@ const JobProvider = ({ children }) => {
   const [jobs, setJobs] = useState(null)
 
   const [jobData, setJobData] = useState(null)
+
+  const [jobCenters, setJobCenters] = useState(null)
 
   const [formInput, setFormInput] = useState({
     form: {
@@ -42,7 +45,7 @@ const JobProvider = ({ children }) => {
     try {
       const { data } = await fetchJobs(keyword, location)
       const { Jobs } = data
-      console.log(Jobs)
+      // console.log(Jobs)
       setJobs(Jobs)
       return Jobs
     } catch (err) {
@@ -53,13 +56,26 @@ const JobProvider = ({ children }) => {
   const getJobsById = async id => {
     try {
       const { data } = await fetchJobsById(id)
-      console.log(data)
+      // console.log(data)
       return data
     } catch (err) {
       console.error(err)
     }
   }
   const jobIds = jobs && jobs.map(({ JvId }) => JvId)
+
+  const getJobCenters = async location => {
+    try {
+      const { data } = await fetchJobCenters(location)
+      if (!data) return
+      const { OneStopCenterList } = data
+      setJobCenters(OneStopCenterList)
+      // console.log(OneStopCenterList)
+      return OneStopCenterList
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
     <JobContext.Provider
@@ -76,7 +92,10 @@ const JobProvider = ({ children }) => {
         formInput,
         setFormInput,
         handleChange,
-        handleForm
+        handleForm,
+        getJobCenters,
+        jobCenters,
+        setJobCenters
       }}>
       {children}
     </JobContext.Provider>
