@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Button, Container } from 'react-bootstrap'
 
 const Hero = () => {
