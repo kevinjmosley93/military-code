@@ -79,10 +79,11 @@ const FeaturedJobs = () => {
                           </a>
                         </div>
                       </div>
-                      <div className='container mt-2 overflow-hidden'>
+                      <div className='container mt-2'>
                         {expanded && JvId === uid && jobData && (
                           <>
                             <div
+                              style={{ wordWrap: 'break-word' }}
                               className='text-center'
                               dangerouslySetInnerHTML={{
                                 __html: jobData.Description
