@@ -14,7 +14,7 @@ const JobCenterSearch = () => {
               <form onSubmit={handleForm}>
                 <div className='row justify-content-center'>
                   <div className='col-md-8'>
-                    <div className='form-group'>
+                    <div className='form-group shadow'>
                       <input
                         name='location'
                         value={location}
@@ -28,7 +28,7 @@ const JobCenterSearch = () => {
                   <div className='col-md-4'>
                     <button
                       type='submit'
-                      className='bg-gradient btn-primary btn-md px-3 py-1'>
+                      className='bg-gradient btn-primary btn-md px-3 py-1 shadow'>
                       Search Centers
                     </button>
                   </div>

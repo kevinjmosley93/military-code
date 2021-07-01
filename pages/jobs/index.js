@@ -80,7 +80,7 @@ const Index = () => {
                           </p>
                           <div>
                             <a
-                              className='btn-md btn-primary bg-gradient px-1 text-center'
+                              className='btn-md btn-primary bg-gradient px-1 text-center shadow'
                               style={{ cursor: 'pointer', float: 'right' }}>
                               View {expanded && JvId === uid ? 'Less' : 'More'}
                             </a>

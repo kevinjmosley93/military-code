@@ -105,11 +105,11 @@ const Resources = () => {
                                 console.error(err)
                               }
                             }}
-                            className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
+                            className='row g-0 border rounded flex-md-row my-3 shadow h-md-250 '>
                             <div
                               style={{
                                 wordWrap: 'break-word',
-                                maxHeight: '540px'
+                                height: '540px'
                               }}
                               id='scroll-white'
                               className='col p-4 d-flex flex-column text-center overflow-scroll p-2'>
@@ -224,19 +224,20 @@ const Resources = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className='container mt-2 '>
-                                <>
-                                  <a
-                                    rel='noreferrer'
-                                    target='_blank'
-                                    href={WebSiteUrl}
-                                    style={{ margin: '0 auto' }}
-                                    className='text-center d-block btn-lg p-2'>
-                                    View Website
-                                  </a>
-                                </>
-                              </div>
                             </div>
+                          </div>
+
+                          <div className='container mt-2'>
+                            <>
+                              <a
+                                rel='noreferrer'
+                                target='_blank'
+                                href={WebSiteUrl}
+                                style={{ margin: '0 auto' }}
+                                className='text-center d-block btn-lg p-2'>
+                                View Website
+                              </a>
+                            </>
                           </div>
                         </div>
                       )

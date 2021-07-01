@@ -14,7 +14,7 @@ const JobSearch = () => {
               <form onSubmit={handleForm}>
                 <div className='row justify-content-center'>
                   <div className='col-md-5'>
-                    <div className='form-group'>
+                    <div className='form-group shadow'>
                       <input
                         name='keyword'
                         value={keyword}
@@ -26,7 +26,7 @@ const JobSearch = () => {
                     </div>
                   </div>
                   <div className='col-md-5'>
-                    <div className='form-group'>
+                    <div className='form-group shadow'>
                       <input
                         name='location'
                         value={location}
@@ -41,7 +41,7 @@ const JobSearch = () => {
                     <button
                       type='submit'
                       style={{ display: 'inline-block' }}
-                      className='bg-gradient btn-primary btn-md px-3 py-1'>
+                      className='bg-gradient btn-primary btn-md px-3 py-1 shadow'>
                       Search Jobs
                     </button>
                   </div>
