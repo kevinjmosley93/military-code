@@ -39,7 +39,7 @@ const Resources = () => {
           <div className='col-md-3'>
             <div className='position-sticky pt-2' style={{ top: '2rem' }}>
               <div className='p-4 mb-3 bg-light rounded shadow-lg'>
-                <h4 className='fst-italic'>Resources</h4>
+                <h4 className='fst-italic text-center mb-2'>Resources</h4>
                 <ul style={{ listStyle: 'none' }} className='m-0 p-0'>
                   <li className='pb-2'>
                     <Link href='apprenticeships'>
@@ -113,7 +113,7 @@ const Resources = () => {
                                 Last Updated {LastUpdated}
                               </small>
                               <h5>
-                                {Name}, {StateAbbr} - {Phone}
+                                {Name} - {Phone}
                               </h5>
                               <div className='d-flex flex-column justify-content-between'>
                                 <p className='my-2'>
@@ -173,11 +173,9 @@ const Resources = () => {
                                   ''
                                 )}
                               </div>
-                              <div
-                                style={{ wordWrap: 'break-word' }}
-                                className='row'>
+                              <div style={{ wordWrap: 'break-word' }}>
                                 {WorkersServices.length > 0 && (
-                                  <div className='col-4'>
+                                  <div className='pb-2'>
                                     <h5>Worker Services</h5>
                                     {WorkersServices.map(
                                       ({ ServiceName }, i) => (
@@ -192,7 +190,7 @@ const Resources = () => {
                                   </div>
                                 )}
                                 {BusinessServices.length > 0 && (
-                                  <div className='col-4'>
+                                  <div className='pb-2'>
                                     <h5>Business Services</h5>
                                     {BusinessServices.map(
                                       ({ ServiceName }, i) => (
@@ -207,7 +205,7 @@ const Resources = () => {
                                   </div>
                                 )}
                                 {YouthServices.length > 0 && (
-                                  <div className='col-4'>
+                                  <div className='pb-2'>
                                     <h5>Youth Services</h5>
                                     {YouthServices.map(({ ServiceName }, i) => (
                                       <span key={i}>

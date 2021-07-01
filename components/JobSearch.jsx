@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { JobContext } from '../contexts/JobContext'
 
 const JobSearch = () => {
@@ -40,18 +40,13 @@ const JobSearch = () => {
                   <div className='col-md-2'>
                     <button
                       type='submit'
+                      style={{ display: 'inline-block' }}
                       className='bg-gradient btn-primary btn-md px-3 py-1'>
-                      <i className='fa fa-search' aria-hidden='true'></i>
+                      Search Jobs
                     </button>
                   </div>
                 </div>
               </form>
-            </div>
-            <div className='popular-jobs'>
-              <b>Popular Keywords: </b>
-              <span className='badge bg-primary mx-2'>Web Design</span>
-              <span className='badge bg-primary mx-2'>Manager</span>
-              <span className='badge bg-primary mx-2'>Programming</span>
             </div>
           </div>
         </div>

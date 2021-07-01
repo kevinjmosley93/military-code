@@ -4,7 +4,7 @@ const contact = () => {
   return (
     <section className='py-5'>
       <div className='container px-5'>
-        <div className='bg-light rounded-3 py-5 px-4 px-md-5 mb-5'>
+        <div className='rounded-3 py-5 px-4 px-md-5 mb-5'>
           <div className='text-center mb-5'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-envelope'></i>
@@ -53,21 +53,29 @@ const contact = () => {
                     style={{ height: '10rem' }}></textarea>
                   <label htmlFor='inputMessage'>Message</label>
                 </div>
+                <div className='d-flex flex-row justify-content-center'>
+                  <button
+                    className='btn-primary btn-lg bg-gradient'
+                    type='submit'>
+                    Send Message
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
         <div className='row gx-5 row-cols-2 row-cols-lg-4 py-5'>
-          <div className='col'>
+          <div className='col-md-4'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-chat-dots'></i>
             </div>
-            <div className='h5 mb-2'>Chat with us</div>
+            <div className='h5 mb-2'>Talk to us</div>
             <p className='text-muted mb-0'>
-              Chat live with one of our support specialists.
+              <span>Email us</span>, we want to hear your stories on how you
+              found a job or if you have questions.
             </p>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-people'></i>
             </div>
@@ -76,22 +84,14 @@ const contact = () => {
               Explore our community forums and communicate with other users.
             </p>
           </div>
-          <div className='col'>
+          <div className='col-md-4'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-question-circle'></i>
             </div>
             <div className='h5'>Support center</div>
             <p className='text-muted mb-0'>
-              Browse FAQ's and support articles to find solutions.
-            </p>
-          </div>
-          <div className='col'>
-            <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
-              <i className='bi bi-telephone'></i>
-            </div>
-            <div className='h5'>Call us</div>
-            <p className='text-muted mb-0'>
-              Call us during normal business hours at (555) 892-9403.
+              Our resources not enough? Inquire about booking a 1 on 1 with one
+              of the veterans in our network!
             </p>
           </div>
         </div>
