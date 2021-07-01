@@ -51,7 +51,7 @@ const Index = () => {
           <JobSearch />
         </div>
       </div>
-      <div className='bg-light text-dark py-5'>
+      <div className='text-dark py-5'>
         <h1 className='text-center'>Jobs</h1>
         <div className=' container'>
           <div className='row my-5'>
@@ -90,8 +90,12 @@ const Index = () => {
                           {expanded && JvId === uid && jobData && (
                             <>
                               <div
-                                style={{ wordWrap: 'break-word' }}
-                                className='text-justify'
+                                style={{
+                                  wordWrap: 'break-word',
+                                  maxHeight: '300px'
+                                }}
+                                id='scroll-white'
+                                className='text-center container overflow-scroll p-2'
                                 dangerouslySetInnerHTML={{
                                   __html: jobData.Description
                                 }}

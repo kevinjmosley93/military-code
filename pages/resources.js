@@ -57,7 +57,7 @@ const Resources = () => {
                     </Link>
                   </li>
                   <li className=''>
-                    <Link href='unemployment'>
+                    <Link href='unemployment-rates'>
                       <a>Unemployment Rates by Location</a>
                     </Link>
                   </li>
@@ -106,7 +106,13 @@ const Resources = () => {
                               }
                             }}
                             className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
-                            <div className='col p-4 d-flex flex-column '>
+                            <div
+                              style={{
+                                wordWrap: 'break-word',
+                                maxHeight: '540px'
+                              }}
+                              id='scroll-white'
+                              className='col p-4 d-flex flex-column text-center overflow-scroll p-2'>
                               <small
                                 className='mb-2'
                                 style={{ fontSize: '.7rem' }}>
@@ -238,8 +244,9 @@ const Resources = () => {
                   )}
               </div>
             </div>
+
+            {paginationJsx()}
           </div>
-          {paginationJsx()}
         </div>
       </div>
     </>

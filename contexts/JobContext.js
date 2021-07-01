@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react'
 
 import { fetchJobs, fetchJobsById } from '../lib/Jobs/fetchJobs'
 import { fetchJobCenters } from '../lib/Jobs/fetchJobCenters'
+import { fetchApprenticeships } from '../lib/fetchApprenticeships'
 
 const JobContext = createContext()
 
@@ -11,6 +12,8 @@ const JobProvider = ({ children }) => {
   const [jobData, setJobData] = useState(null)
 
   const [jobCenters, setJobCenters] = useState(null)
+
+  const [apprenticeships, setApprenticeships] = useState(null)
 
   const [formInput, setFormInput] = useState({
     form: {
@@ -78,6 +81,19 @@ const JobProvider = ({ children }) => {
     }
   }
 
+  const getApprenticeships = async location => {
+    try {
+      const { data } = await fetchApprenticeships(location)
+      if (!data) return
+      const { ApprenticeshipOfficeList } = data
+      setApprenticeships(ApprenticeshipOfficeList)
+      console.log(ApprenticeshipOfficeList)
+      return data
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <JobContext.Provider
       value={{
@@ -96,7 +112,10 @@ const JobProvider = ({ children }) => {
         handleForm,
         getJobCenters,
         jobCenters,
-        setJobCenters
+        setJobCenters,
+        getApprenticeships,
+        apprenticeships,
+        setApprenticeships
       }}>
       {children}
     </JobContext.Provider>

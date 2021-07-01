@@ -83,8 +83,12 @@ const FeaturedJobs = () => {
                         {expanded && JvId === uid && jobData && (
                           <>
                             <div
-                              style={{ wordWrap: 'break-word' }}
-                              className='text-center'
+                              style={{
+                                wordWrap: 'break-word',
+                                maxHeight: '410px'
+                              }}
+                              id='scroll-black'
+                              className='text-center overflow-scroll p-2'
                               dangerouslySetInnerHTML={{
                                 __html: jobData.Description
                               }}
