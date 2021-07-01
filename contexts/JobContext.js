@@ -32,6 +32,7 @@ const JobProvider = ({ children }) => {
       const { keyword, location } = formInput.form
 
       await getJobs(keyword, location)
+      await getJobCenters(location)
     } catch (err) {
       console.error(err)
     }

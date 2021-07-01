@@ -1,12 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
+import Link from 'next/link'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
+import JobCenterSearch from '../components/JobCenterSearch'
 
 const Resources = () => {
   const [expanded, setExpanded] = useState(false)
   const [uid, setUid] = useState(null)
-  const { jobCenters, getJobCenters, location, jobCenterData } =
-    useContext(JobContext)
+  const { jobCenters, getJobCenters, location } = useContext(JobContext)
 
   const data = jobCenters || []
 
@@ -37,18 +38,37 @@ const Resources = () => {
           <h1 className='text-center'>Job Centers Near {location}</h1>
           <div className='col-md-3'>
             <div className='position-sticky pt-2' style={{ top: '2rem' }}>
-              <div className='mb-4 text-center'>Search component</div>
               <div className='p-4 mb-3 bg-light rounded shadow-lg'>
                 <h4 className='fst-italic'>Resources</h4>
-                <div className='mb-0'>jhugdjkjhfdk</div>
+                <ul style={{ listStyle: 'none' }} className='m-0 p-0'>
+                  <li className='pb-2'>
+                    <Link href='apprenticeships'>
+                      <a>Apprenticeships by Location</a>
+                    </Link>
+                  </li>
+                  <li className='pb-2'>
+                    <Link href='licenses'>
+                      <a>Licenses by Location</a>
+                    </Link>
+                  </li>
+                  <li className='pb-2'>
+                    <Link href='training'>
+                      <a>Training by Location</a>
+                    </Link>
+                  </li>
+                  <li className=''>
+                    <Link href='unemployment'>
+                      <a>Unemployment Rates by Location</a>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <div
-            style={{ lineHeight: '2rem' }}
-            className='col-md-9 text-dark py-2'>
+          <div className='col-md-9 text-dark py-2'>
             <div className=' container'>
-              <div className='row my-5'>
+              <JobCenterSearch />
+              <div style={{ lineHeight: '2rem' }} className='row my-5'>
                 {jobCenters &&
                   filteredData.map(
                     ({
@@ -85,7 +105,6 @@ const Resources = () => {
                                 console.error(err)
                               }
                             }}
-                            style={{ cursor: 'pointer' }}
                             className='row g-0 border rounded flex-md-row mb-5 shadow h-md-250 '>
                             <div className='col p-4 d-flex flex-column '>
                               <small
@@ -94,7 +113,7 @@ const Resources = () => {
                                 Last Updated {LastUpdated}
                               </small>
                               <h5>
-                                {Name} - {Phone}
+                                {Name}, {StateAbbr} - {Phone}
                               </h5>
                               <div className='d-flex flex-column justify-content-between'>
                                 <p className='my-2'>
@@ -222,6 +241,7 @@ const Resources = () => {
               </div>
             </div>
           </div>
+          {paginationJsx()}
         </div>
       </div>
     </>

@@ -27,7 +27,6 @@
 
 .active {
   border: none;
-  background-color: #0d6efd;
   color: #888;
   pointer-events: none;
 }
