@@ -9,7 +9,7 @@ import FeaturedJobs from '../components/FeaturedJobs'
 export default function Home() {
   return (
     <>
-      <main>
+      <main className='bg-light'>
         <Hero />
         <About />
         <Services />

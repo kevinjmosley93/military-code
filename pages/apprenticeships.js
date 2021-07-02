@@ -41,7 +41,7 @@ const Resources = () => {
   //         <h1 className='text-center'>Apprenticeships near {location}</h1>
   //         <div className='col-md-3'>
   //           <div className='position-sticky pt-2' style={{ top: '2rem' }}>
-  //             <div className='p-4 mb-3 bg-light rounded shadow-lg'>
+  //             <div className='p-4 mb-3  rounded shadow-lg'>
   //               <h4 className='fst-italic text-center mb-2'>Resources</h4>
   //               <ul style={{ listStyle: 'none' }} className='m-0 p-0'>
   //                 <li className='pb-2'>

@@ -43,7 +43,7 @@ const FeaturedJobs = () => {
   // console.log({ jobs })
 
   return (
-    <div className='bg-light  py-5'>
+    <div className='  py-5'>
       <h1 className='text-center pb-2'>Featured Jobs</h1>
       <JobSearch />
       <div className='p-3 mt-3 container text-light bg-dark rounded'>

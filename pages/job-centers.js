@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react'
-import Link from 'next/link'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
 import JobCenterSearch from '../components/JobCenterSearch'

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Subscribe = () => {
   return (
-    <section className='bg-light py-5'>
+    <section className=' py-5'>
       <h1 className='text-center py-3'>Subscribe</h1>
       <div className='container bg-dark bg-gradient'>
         <div className='p-4 p-sm-5 '>
