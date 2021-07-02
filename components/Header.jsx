@@ -22,7 +22,7 @@ const Header = () => {
               width={100}
               height={65}
               alt='logo'
-              src='https://i.imgur.com/jXeggwV.png'
+              src='https://i.imgur.com/fAo3uvq.png'
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
@@ -31,7 +31,8 @@ const Header = () => {
               <Nav.Link href='/about'>About</Nav.Link>
               {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
-              <Nav.Link href='/resources'>Resources</Nav.Link>
+              <Nav.Link href='/training-programs'>Training</Nav.Link>
+              <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
             </Nav>
             <Nav>
               <Button

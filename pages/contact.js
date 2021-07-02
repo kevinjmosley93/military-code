@@ -64,8 +64,8 @@ const contact = () => {
             </div>
           </div>
         </div>
-        <div className='row gx-5 row-cols-2 row-cols-lg-4 py-5'>
-          <div className='col-md-4'>
+        <div className='row mx-auto py-5'>
+          <div className='col-md-6'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-chat-dots'></i>
             </div>
@@ -75,7 +75,7 @@ const contact = () => {
               found a job or if you have questions.
             </p>
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-6'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-people'></i>
             </div>
@@ -84,7 +84,7 @@ const contact = () => {
               Explore our community forums and communicate with other users.
             </p>
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-12 text-md-center'>
             <div className='feature bg-primary bg-gradient text-white rounded-3 mb-3'>
               <i className='bi bi-question-circle'></i>
             </div>

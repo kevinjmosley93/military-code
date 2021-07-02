@@ -24,23 +24,23 @@ const Services = () => {
           </div>
           <div className='feature col-md-4 shadow border rounded py-3'>
             <div className='feature-icon text-center mb-2'>
-              <i className='fa fa-cogs' aria-hidden='true'></i>
+              <i className='fa fa-users' aria-hidden='true'></i>
             </div>
-            <h2>Find Local Apprenticeships</h2>
+            <h2>One on One with Veterans</h2>
             <p>
-              Apprenticeships are a great way for veterans to get paid while
-              using learning a valuable trade. Most programs allow you to use
-              your G.I. Bill as well.
+              Book a one on one call with our team to go over your resume,
+              digital presence and job interviewing tips that helped them
+              succeed after seperation.
             </p>
-            <Link href='/resources'>
+            <Link href='/contact'>
               <a style={{ margin: '0 auto' }} className='icon-link'>
-                View Apprenticeships
+                Book Now
               </a>
             </Link>
           </div>
           <div className='feature col-md-4 shadow py-3 border rounded'>
             <div className='feature-icon text-center mb-2'>
-              <i className='fa fa-users' aria-hidden='true'></i>
+              <i className='fa fa-building' aria-hidden='true'></i>
             </div>
             <h2>Find Local Job Centers</h2>
             <p>

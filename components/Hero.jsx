@@ -8,11 +8,12 @@ const Hero = () => {
       <Container className='vertical-center'>
         <div className=' d-flex flex-column justify-content-around px-4 py-2 text-center'>
           <h1 style={{ fontSize: '2rem' }} className='fw-bold mb-2'>
-            MTC | Military Then Code
+            ETV | Employ The V.E.T.S - Veterans Equally Trying to Survive
           </h1>
           <p style={{ fontSize: '1rem' }}>
-            We are the #1 resource center and job board for separating military
-            personnel.
+            #1 Job board for separating veterans & active duty military
+            personnel to find available jobs and resources to find employment
+            before their separation date.
           </p>
           <div className='d-grid gap-3 d-sm-flex mt-3 justify-content-sm-center'>
             <Link href='/about'>

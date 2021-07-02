@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className='bg-dark bg-gradient pt-5'>
+    <footer className='bg-dark pt-5'>
       <Container className=' text-light'>
         <Row className='mb-5'>
           <Col sm={6} md={3}>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <a href='/blog'>Blog</a>
               </li> */}
               <li>
-                <a href='/resources'>Resources</a>
+                <a href='/jobs'>Jobs</a>
               </li>
               <li>
                 <a href='#'>Privacy Policy</a>
@@ -41,20 +41,22 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col sm={6} md={3}>
+          <Col className='mb-3' sm={6} md={3}>
             <h1 id='footer__heading' className='fw-bold mb-3'>
               CONTACT
             </h1>
             <div>
               {' '}
-              <div>Military Then Code</div>
-              <a rel='noreferrer' href='mailto:militarythencode@gmail.com'>
-                info@militarythencode.com
+              <div>
+                ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive
+              </div>
+              <a rel='noreferrer' href='mailto:employthevets@gmail.com'>
+                info@employthevets.com
               </a>
             </div>
           </Col>
           <Col sm={6} md={3}>
-            <h1 id='footer__heading' className='fw-bold mb-3 '>
+            <h1 id='footer__heading' className='fw-bold '>
               CONNECT
             </h1>
             <div className='social-icons d-flex flex-row justify-content-between'>
@@ -86,8 +88,8 @@ const Footer = () => {
             fontSize: '.6rem'
           }}>
           <p className='text-center py-3 text-light mb-0'>
-            {new Date().getFullYear()} All Rights Reserved | MTC - Military Then
-            Code™
+            {new Date().getFullYear()} All Rights Reserved | ETV - Employ The
+            V.E.T.S™
           </p>
         </Container>
       </Container>

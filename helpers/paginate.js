@@ -29,37 +29,39 @@ export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {
   }
   const paginationJsx = () => {
     return (
-      <nav aria-label='job pagination' className='paginate '>
-        <ul className='pagination-lg justify-content-sm-end justify-content-center d-flex flex-row p-0'>
-          <button
-            onClick={goToPreviousPage}
-            className={` ${
-              currentPage === 1 ? 'disabled' : ''
-            } badge p-2 bg-primary bg-gradient`}>
-            <i className='fa fa-arrow-circle-left' aria-hidden='true'></i>
-          </button>
-          {getPaginationGroup().map((item, index) => (
-            <li key={index} onClick={changePage} className='page-item'>
-              <button
-                style={{ paddingInline: '.3rem' }}
-                className={` ${
-                  currentPage === item ? 'active' : ''
-                } page-link p-2`}>
-                <span className=''>{item}</span>
-              </button>
-            </li>
-          ))}
-          {currentPage === pageLimit ? (
+      <>
+        <div className='paginate justify-content-sm-end justify-content-center d-flex flex-row p-0'>
+          {currentPage <= 1 ? (
             ''
           ) : (
-            <button
-              onClick={goToNextPage}
-              className={`badge p-2 bg-primary bg-gradient`}>
-              <i className='fa fa-arrow-circle-right' aria-hidden='true'></i>
-            </button>
+            <a
+              className='d-flex flex-row align-items-center'
+              onClick={goToPreviousPage}>
+              <i className='fa fa-arrow-circle-left' aria-hidden='true'></i>
+            </a>
           )}
-        </ul>
-      </nav>
+          {getPaginationGroup().map((item, index) => (
+            <a
+              key={index}
+              onClick={changePage}
+              style={{ paddingInline: '.3rem' }}
+              className={` ${
+                currentPage === item ? 'active' : ''
+              } page-link p-2`}>
+              <span className=''>{item}</span>
+            </a>
+          ))}
+          {currentPage === pageLimit || filteredData.length === 0 ? (
+            ''
+          ) : (
+            <a
+              className='d-flex flex-row align-items-center'
+              onClick={goToNextPage}>
+              <i className='fa fa-arrow-circle-right' aria-hidden='true'></i>
+            </a>
+          )}
+        </div>
+      </>
     )
   }
   const filteredData = getPaginatedData().map(info => info)

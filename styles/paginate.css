@@ -1,9 +1,11 @@
-.paginate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
+.paginate ul {
+  display: inline-block;
+  list-style: none;
+}
+.paginate li {
+  color: black;
+  float: left;
+  padding: 8px 16px;
 }
 
 .paginationItem {
@@ -26,9 +28,9 @@
 }
 
 .active {
-  border: none;
-  color: #888;
-  pointer-events: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
 }
 
 .prev.disabled,

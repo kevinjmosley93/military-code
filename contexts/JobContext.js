@@ -2,12 +2,14 @@ import React, { createContext, useState } from 'react'
 
 import { fetchJobs, fetchJobsById } from '../lib/Jobs/fetchJobs'
 import { fetchJobCenters } from '../lib/Jobs/fetchJobCenters'
-import { fetchApprenticeships } from '../lib/fetchApprenticeships'
+import { fetchTraining } from '../lib/fetchTraining'
 
 const JobContext = createContext()
 
 const JobProvider = ({ children }) => {
   const [jobs, setJobs] = useState(null)
+
+  const [training, setTraining] = useState(null)
 
   const [jobData, setJobData] = useState(null)
 
@@ -81,13 +83,13 @@ const JobProvider = ({ children }) => {
     }
   }
 
-  const getApprenticeships = async location => {
+  const getTraining = async (keyword, location) => {
     try {
-      const { data } = await fetchApprenticeships(location)
+      const { data } = await fetchTraining(keyword, location)
       if (!data) return
-      const { ApprenticeshipOfficeList } = data
-      setApprenticeships(ApprenticeshipOfficeList)
-      console.log(ApprenticeshipOfficeList)
+      const { SchoolPrograms } = data
+      setTraining(SchoolPrograms)
+      console.log(SchoolPrograms)
       return data
     } catch (err) {
       console.error(err)
@@ -113,9 +115,9 @@ const JobProvider = ({ children }) => {
         getJobCenters,
         jobCenters,
         setJobCenters,
-        getApprenticeships,
-        apprenticeships,
-        setApprenticeships
+        getTraining,
+        training,
+        setTraining
       }}>
       {children}
     </JobContext.Provider>

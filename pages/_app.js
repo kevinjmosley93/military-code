@@ -12,8 +12,10 @@ function MyApp({ Component, pageProps }) {
     <JobProvider>
       <Head>
         <title>
-          MTC | Military Then Code - helping Veterans find jobs before their
-          separation date
+          ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive - #1 Job
+          board for separating veterans & active duty military personnel to find
+          available jobs and resources to find employment before their
+          separation date.
         </title>
         <link rel='icon' href='/favicon.png' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -27,12 +29,12 @@ function MyApp({ Component, pageProps }) {
         <meta
           property='og:title'
           name='title'
-          content='MTC | Military Then Code - helping Veterans find jobs before their separation date'
+          content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive - #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
         />
         <meta
           property='og:description'
           name='description'
-          content='#1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
+          content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive is the #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
         />
         <meta
           property='og:image'

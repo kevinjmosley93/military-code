@@ -4,7 +4,7 @@ const Subscribe = () => {
   return (
     <section className='bg-light py-5'>
       <h1 className='text-center py-3'>Subscribe</h1>
-      <div className='container bg-dark bg-gradient rounded-3'>
+      <div className='container bg-dark bg-gradient'>
         <div className='p-4 p-sm-5 '>
           <div className='d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start'>
             <div className='mb-4 mb-xl-0'>
@@ -25,7 +25,7 @@ const Subscribe = () => {
                   aria-describedby='button-newsletter'
                 />
                 <button
-                  className='btn btn-primary btn-md'
+                  className='btn-primary btn-md'
                   id='button-newsletter'
                   type='button'>
                   Sign up
