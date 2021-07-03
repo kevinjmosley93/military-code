@@ -1,6 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const contact = () => {
+  const [formInput, setFormInput] = useState({
+    form: {
+      fullName: '',
+      email: '',
+      phone: '',
+      message: ''
+    }
+  })
+
+  const handleChange = e => {
+    const updatedField = { [e.target.name]: e.target.value }
+    setFormInput(currState => {
+      const updatedForm = { ...currState.form, ...updatedField }
+      console.log({ updatedForm })
+      return { form: updatedForm }
+    })
+  }
+  const handleForm = async e => {
+    try {
+      e.preventDefault()
+      const { fullName, email, phone, message } = formInput.form
+
+      const body = {
+        fullName,
+        email,
+        phone,
+        message
+      }
+
+      const url = `${window.location.origin}/api/create-clients`
+      const params = {
+        method: 'POST',
+        body: JSON.stringify(body)
+      }
+      const res = await fetch(url, params)
+      const data = await res.json()
+      console.log(data)
+      data &&
+        setFormInput({
+          form: {
+            fullName: '',
+            email: '',
+            phone: '',
+            message: ''
+          }
+        })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const {
+    form: { fullName, email, phone, message }
+  } = formInput
+
   return (
     <section className='py-5'>
       <div className='container px-5'>
@@ -16,9 +71,12 @@ const contact = () => {
           </div>
           <div className='row gx-5 justify-content-center'>
             <div className='col-lg-8 col-xl-6'>
-              <form>
+              <form onSubmit={handleForm}>
                 <div className='form-floating mb-3'>
                   <input
+                    onChange={handleChange}
+                    name='fullName'
+                    value={fullName}
                     className='form-control'
                     id='inputName'
                     type='text'
@@ -28,6 +86,9 @@ const contact = () => {
                 </div>
                 <div className='form-floating mb-3'>
                   <input
+                    onChange={handleChange}
+                    name='email'
+                    value={email}
                     className='form-control'
                     id='inputEmail'
                     type='email'
@@ -37,6 +98,9 @@ const contact = () => {
                 </div>
                 <div className='form-floating mb-3'>
                   <input
+                    onChange={handleChange}
+                    name='phone'
+                    value={phone}
                     className='form-control'
                     id='inputPhone'
                     type='tel'
@@ -46,6 +110,9 @@ const contact = () => {
                 </div>
                 <div className='form-floating mb-3'>
                   <textarea
+                    onChange={handleChange}
+                    name='message'
+                    value={message}
                     className='form-control'
                     id='inputMessage'
                     type='text'

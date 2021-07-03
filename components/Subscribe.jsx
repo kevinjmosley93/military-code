@@ -1,6 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Subscribe = () => {
+  const [formInput, setFormInput] = useState({
+    form: {
+      email: ''
+    }
+  })
+
+  const handleChange = e => {
+    const updatedField = { [e.target.name]: e.target.value }
+    setFormInput(currState => {
+      const updatedForm = { ...currState.form, ...updatedField }
+      console.log({ updatedForm })
+      return { form: updatedForm }
+    })
+  }
+  const handleForm = async e => {
+    try {
+      e.preventDefault()
+      const { email } = formInput.form
+
+      const body = {
+        email
+      }
+
+      const url = `${window.location.origin}/api/create-clients`
+      const params = {
+        method: 'POST',
+        body: JSON.stringify(body)
+      }
+      const res = await fetch(url, params)
+      const data = await res.json()
+      console.log(data)
+      data &&
+        setFormInput({
+          form: {
+            email: ''
+          }
+        })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const {
+    form: { email }
+  } = formInput
+
   return (
     <section className=' py-5'>
       <h1 className='text-center py-3'>Subscribe</h1>
@@ -16,10 +62,13 @@ const Subscribe = () => {
               </div>
             </div>
             <div className='ms-xl-4'>
-              <div className='input-group mb-2'>
+              <form onSubmit={handleForm} className='input-group mb-2'>
                 <input
                   className='form-control'
                   type='text'
+                  name='email'
+                  value={email}
+                  onChange={handleChange}
                   placeholder='Email address...'
                   aria-label='Email address...'
                   aria-describedby='button-newsletter'
@@ -27,10 +76,10 @@ const Subscribe = () => {
                 <button
                   className='btn-primary btn-md'
                   id='button-newsletter'
-                  type='button'>
+                  type='submit'>
                   Sign up
                 </button>
-              </div>
+              </form>
               <div className='small text-white-50'>
                 We care about privacy, and will never share your data.
               </div>

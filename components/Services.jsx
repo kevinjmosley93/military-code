@@ -1,7 +1,42 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Modal } from 'react-bootstrap'
 
 const Services = () => {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search)
+    if (query.get('success')) {
+      console.log('Order placed! You will receive an email confirmation.')
+    }
+    if (query.get('canceled')) {
+      console.log(
+        'Order canceled -- continue to shop around and checkout when you’re ready.'
+      )
+    }
+  }, [])
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+
+    const url = '/api/booking'
+
+    const params = {
+      method: 'POST'
+      // mode: 'no-cors'
+    }
+
+    const res = await fetch(url, params)
+
+    const { sessionUrl } = await res.json()
+
+    console.log(sessionUrl)
+    window.location.assign(sessionUrl)
+  }
+
   return (
     <div className='bg-dark text-light'>
       <div className='container  px-4 py-5' id='featured-3'>
@@ -32,11 +67,12 @@ const Services = () => {
               digital presence and job interviewing tips that helped them
               succeed after seperation.
             </p>
-            <Link href='/contact'>
-              <a style={{ margin: '0 auto' }} className='icon-link'>
-                Book Now
-              </a>
-            </Link>
+            <a
+              onClick={handleShow}
+              style={{ margin: '0 auto', cursor: 'pointer' }}
+              className='icon-link'>
+              Book Now
+            </a>
           </div>
           <div className='feature col-md-4 shadow py-3 border rounded'>
             <div className='feature-icon text-center mb-2'>
@@ -48,7 +84,7 @@ const Services = () => {
               Contacting the centers closest to where you will be getting out is
               the first step to landing a job.
             </p>
-            <Link href='/resources'>
+            <Link href='/job-centers'>
               <a style={{ margin: '0 auto' }} className='icon-link'>
                 View Centers
               </a>
@@ -56,6 +92,39 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title className='fw-bolder text-dark'>
+            Separation Employment Digtal Footprint
+            <br />
+            <span className='badge bg-primary rounded-pill'>$50.00</span>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='lead fw-normal text-dark-50 text-center'>
+          This is a one on one 1hr zoom session for us to go over your goals for
+          getting out, sharpening your digital footprint with custom Linkedin
+          set-up, resume best practices and access to job recruiter resource
+          spreadsheets.
+        </Modal.Body>
+        <Modal.Footer className='d-flex flex-row justify-content-between'>
+          <small className='text-center'>
+            *Your booking fee serves as a donation to ETV. We appreciate all
+            donations and use it to invest into building the platform.
+          </small>
+          <button
+            style={{ cursor: 'pointer' }}
+            onClick={handleClose}
+            className='btn-primary px-3 rounded'>
+            Close
+          </button>
+          <form onSubmit={handleSubmit}>
+            <button type='submit' className='btn-primary px-3 rounded'>
+              Book Now
+            </button>
+          </form>
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }
