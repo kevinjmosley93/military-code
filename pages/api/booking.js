@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             price_data: {
               currency: 'usd',
               product_data: {
-                name: 'Separation Employment Digtal Footprint - 1 one 1',
+                name: 'Separation Employment Digtal Footprint - 1 on 1',
                 description:
                   'Be on the look out for an email from ETV with your confirmation and a set of times that works for us or you can reply with times that work for you.'
               },
