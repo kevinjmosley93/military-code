@@ -31,7 +31,7 @@ const Footer = () => {
                 <a href='/jobs'>Jobs</a>
               </li>
               <li>
-                <a href='#'>Privacy Policy</a>
+                <a href='privacy-policy'>Privacy Policy</a>
               </li>
               <li>
                 <a href='/donation-policy'>Donation Policy</a>
