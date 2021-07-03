@@ -1,6 +1,12 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube
+} from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -60,22 +66,28 @@ const Footer = () => {
               CONNECT
             </h1>
             <div className='social-icons d-flex flex-row justify-content-between'>
-              <a href='#'>
+              <a
+                target='_blank'
+                rel='noreferrer'
+                href='https://www.linkedin.com/company/veterans-equally-trying-to-survive'>
+                <FaLinkedinIn />
+              </a>{' '}
+              <a
+                target='_blank'
+                rel='noreferrer'
+                href='https://www.facebook.com/employthevets'>
                 <FaFacebookF />
               </a>{' '}
               <a
                 target='_blank'
                 rel='noreferrer'
-                href='https://www.instagram.com/helpingthehood'>
-                <FaInstagram />
-              </a>{' '}
+                href='https://twitter.com/EmployTheVets'>
+                <FaTwitter />
+              </a>
               <a
                 target='_blank'
                 rel='noreferrer'
-                href='https://twitter.com/helpingthehood'>
-                <FaTwitter />
-              </a>
-              <a href='#'>
+                href='https://www.youtube.com/channel/UCwmJq-sAmYC3rNxq7fWhDZA'>
                 <FaYoutube />
               </a>
             </div>
