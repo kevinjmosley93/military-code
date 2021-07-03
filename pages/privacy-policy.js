@@ -18,6 +18,7 @@ const PrivacyPolicy = () => {
         created with the help of the{' '}
         <a
           href='https://www.termsfeed.com/privacy-policy-generator/'
+          rel='noreferrer'
           target='_blank'>
           Privacy Policy Generator
         </a>
