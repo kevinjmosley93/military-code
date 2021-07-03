@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const contact = () => {
+const Contact = () => {
   const [formInput, setFormInput] = useState({
     form: {
       fullName: '',
@@ -167,4 +167,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
