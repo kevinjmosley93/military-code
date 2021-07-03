@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
             Equally Trying to Survive, accessible from{' '}
             <a
               href='https://www.employthevets.com'
-              rel='external nofollow noopener'
+              rel='noreferrer'
               target='_blank'>
               https://www.employthevets.com
             </a>
@@ -186,7 +186,7 @@ const PrivacyPolicy = () => {
           disabling, or deleting local shared objects?&quot; available at{' '}
           <a
             href='https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_'
-            rel='external nofollow noopener'
+            rel='noreferrer'
             target='_blank'>
             https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
           </a>
@@ -206,7 +206,10 @@ const PrivacyPolicy = () => {
         Persistent Cookies remain on Your personal computer or mobile device
         when You go offline, while Session Cookies are deleted as soon as You
         close Your web browser. You can learn more about cookies here:{' '}
-        <a href='https://www.termsfeed.com/blog/cookies/' target='_blank'>
+        <a
+          href='https://www.termsfeed.com/blog/cookies/'
+          rel='noreferrer'
+          target='_blank'>
           All About Cookies by TermsFeed
         </a>
         .
@@ -495,7 +498,7 @@ const PrivacyPolicy = () => {
           By visiting this page on our website:{' '}
           <a
             href='https://www.employthevets.com/contact'
-            rel='external nofollow noopener'
+            rel='noreferrer'
             target='_blank'>
             https://www.employthevets.com/contact
           </a>
