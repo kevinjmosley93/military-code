@@ -1,4 +1,6 @@
 import { JobProvider } from '../contexts/JobContext.js'
+import React from 'react'
+import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Head from 'next/head'
@@ -8,6 +10,22 @@ import '../styles/globals.css'
 import '../styles/paginate.css'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const handleRouteChange = url => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return (
     <JobProvider>
       <Head>
@@ -19,7 +37,11 @@ function MyApp({ Component, pageProps }) {
         </title>
         <link rel='icon' href='/favicon.png' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap'
           rel='stylesheet'

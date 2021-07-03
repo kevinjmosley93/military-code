@@ -111,6 +111,14 @@ const Services = () => {
           <small className='text-center'>
             *Your booking fee serves as a donation to ETV. We appreciate all
             donations and use it to invest into building the platform.
+            <br />
+            <Link href='/donation-policy'>
+              <a
+                style={{ margin: '0 auto', fontSize: '.6rem' }}
+                className='icon-link'>
+                Donation Policy
+              </a>
+            </Link>
           </small>
           <button
             style={{ cursor: 'pointer' }}
