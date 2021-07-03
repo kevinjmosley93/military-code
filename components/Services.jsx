@@ -33,7 +33,7 @@ const Services = () => {
 
     const { sessionUrl } = await res.json()
 
-    console.log(sessionUrl)
+    // console.log(sessionUrl)
     window.location.assign(sessionUrl)
   }
 
@@ -93,11 +93,15 @@ const Services = () => {
         </div>
       </div>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header>
+      <Modal
+        size='lg'
+        aria-labelledby='contained-modal-title-vcenter'
+        centered
+        show={show}
+        onHide={handleClose}>
+        <Modal.Header className='mx-auto'>
           <Modal.Title className='fw-bolder text-dark'>
-            Separation Employment Digtal Footprint
-            <br />
+            Separation Employment Digtal Footprint -{' '}
             <span className='badge bg-primary rounded-pill'>$50.00</span>
           </Modal.Title>
         </Modal.Header>

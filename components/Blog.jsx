@@ -7,7 +7,7 @@ const Blog = () => {
   const fetchData = async () => {
     const res = await fetch(`${window.location.href}api/get-blog`)
     const data = await res.json()
-    console.log('this is data', data)
+    // console.log('this is data', data)
     setData(data)
   }
   useEffect(() => {
@@ -24,7 +24,7 @@ const Blog = () => {
       blogImg
     })
   )
-  console.log({ blog })
+  // console.log({ blog })
   return (
     <div className='container'>
       <h1 className='text-center mt-3'>Recent Posts</h1>

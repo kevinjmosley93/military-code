@@ -11,7 +11,7 @@ const Subscribe = () => {
     const updatedField = { [e.target.name]: e.target.value }
     setFormInput(currState => {
       const updatedForm = { ...currState.form, ...updatedField }
-      console.log({ updatedForm })
+      // console.log({ updatedForm })
       return { form: updatedForm }
     })
   }
@@ -31,7 +31,7 @@ const Subscribe = () => {
       }
       const res = await fetch(url, params)
       const data = await res.json()
-      console.log(data)
+      // console.log(data)
       data &&
         setFormInput({
           form: {

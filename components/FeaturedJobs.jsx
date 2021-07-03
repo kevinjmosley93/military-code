@@ -16,7 +16,7 @@ const FeaturedJobs = () => {
     data
   })
 
-  console.log({ filteredData })
+  // console.log({ filteredData })
 
   const handleClick = async id => {
     try {

@@ -14,7 +14,7 @@ const Resources = () => {
     data
   })
 
-  console.log({ filteredData })
+  // console.log({ filteredData })
 
   useEffect(() => {
     getJobCenters(location)

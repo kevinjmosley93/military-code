@@ -15,7 +15,7 @@ export default async (req, res) => {
       msg: 'Email is required'
     })
 
-  console.log(email)
+  // console.log(email)
 
   try {
     table.create(

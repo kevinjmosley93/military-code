@@ -89,7 +89,7 @@ const JobProvider = ({ children }) => {
       if (!data) return
       const { SchoolPrograms } = data
       setTraining(SchoolPrograms)
-      console.log(SchoolPrograms)
+      // console.log(SchoolPrograms)
       return data
     } catch (err) {
       console.error(err)

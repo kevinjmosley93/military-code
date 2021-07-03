@@ -16,7 +16,7 @@ const Resources = () => {
     data
   })
 
-  console.log({ filteredData })
+  // console.log({ filteredData })
 
   useEffect(() => {
     getApprenticeships(location)
@@ -30,7 +30,7 @@ const Resources = () => {
       </div>
     )
 
-  console.log({ apprenticeships })
+  // console.log({ apprenticeships })
 
   return <div>apprenticeships</div>
 

@@ -40,7 +40,7 @@ const Training = () => {
     data
   })
 
-  console.log({ filteredData })
+  // console.log({ filteredData })
 
   useEffect(() => {
     getTraining(keyword, location)
@@ -56,7 +56,7 @@ const Training = () => {
       </div>
     )
 
-  console.log({ training })
+  // console.log({ training })
 
   return (
     <div className='container py-2 h-100'>
