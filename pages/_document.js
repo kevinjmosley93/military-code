@@ -32,7 +32,6 @@ class MyDocument extends Document {
             content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
           />
           <meta property='og:author' name='author' content='MMGThemes' />
-
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -50,6 +49,31 @@ class MyDocument extends Document {
           `
             }}
           />
+          {/* LinkedIn Insight Tag*/}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+               _linkedin_partner_id = ${process.env.NEXT_PUBLIC_LINKEDIN_TAG}; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); 
+          `
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})();  
+          `
+            }}
+          />
+          <noscript>
+            {' '}
+            <img
+              height='1'
+              width='1'
+              style={{ display: 'none', zIndex: '-1234' }}
+              alt='LinkedIn Tag Image'
+              src='https://px.ads.linkedin.com/collect/?pid=3705769&fmt=gif'
+            />{' '}
+          </noscript>
         </Head>
         <body>
           <Main />

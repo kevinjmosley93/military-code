@@ -48,7 +48,7 @@ const Training = () => {
 
   if (!training)
     return (
-      <div>
+      <div className='container py-2 h-100'>
         <h1 className='text-center'>
           Training/Degree Programs near {location}
         </h1>

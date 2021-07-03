@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap'
 import React, { useState } from 'react'
 
 export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {

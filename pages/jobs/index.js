@@ -117,8 +117,8 @@ const Index = () => {
                 )
               })}
           </div>
+          {paginationJsx()}
         </div>
-        {paginationJsx()}
       </div>
     </>
   )
