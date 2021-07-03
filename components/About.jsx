@@ -10,7 +10,7 @@ const About = () => {
             We know how it feels to be quickly approaching the end of service
             and not know exactly what route you want to go next. Even though it
             was scary for my getting out at the start of a pandemic, I was able
-            to florish becuase I was prepared.{' '}
+            to florish because I was prepared.{' '}
           </p>
         </div>
       </div>
