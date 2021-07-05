@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import { Nav, Navbar, Button, Container } from 'react-bootstrap'
+import { JobContext } from '../contexts/JobContext'
 
 const Header = () => {
+  const { user } = useContext(JobContext)
+
   return (
     <>
       <Navbar
@@ -35,6 +38,31 @@ const Header = () => {
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
             </Nav>
             <Nav>
+              {user && (
+                <Button
+                  onClick={async () => {
+                    const url = 'http://localhost:3000/auth/sign-out'
+                    const headers = new Headers()
+
+                    const params = {
+                      method: 'DELETE',
+                      headers: headers.set(
+                        'Authorization',
+                        `Bearer ${user.token}`
+                      )
+                    }
+                    const res = await fetch(url, params)
+
+                    const data = await res.json()
+                    console.log({ data })
+                  }}
+                  as='a'
+                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  variant='primary'
+                  size='lg'>
+                  Log Out
+                </Button>
+              )}
               <Button
                 as='a'
                 href='/contact'
