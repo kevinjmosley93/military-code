@@ -21,7 +21,7 @@ const FeaturedJobs = () => {
   const handleClick = async id => {
     try {
       const data = await getJobsById(id)
-      setJobData(data)
+      await setJobData(data)
       // console.log(jobData)
     } catch (err) {
       console.error(err)
@@ -72,11 +72,12 @@ const FeaturedJobs = () => {
                           {Company} is hiring in {Location}
                         </p>
                         <div>
-                          <a
+                          <button
+                            type='button'
                             className='btn-md btn-primary bg-gradient p-1 text-center'
                             style={{ cursor: 'pointer', float: 'right' }}>
                             View {expanded && JvId === uid ? 'Less' : 'More'}
-                          </a>
+                          </button>
                         </div>
                       </div>
                       <div className='container mt-2'>

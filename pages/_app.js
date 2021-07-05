@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
           available jobs and resources to find employment before their
           separation date.
         </title>
+        <link rel='canonical' href='https://employthevets.com' />
         <link rel='icon' href='/favicon.png' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
