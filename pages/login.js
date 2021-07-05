@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import Link from 'next/link'
 import { JobContext } from '../contexts/JobContext'
 
 const Login = () => {
@@ -35,9 +36,9 @@ const Login = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      const { user } = await res.json()
-      if (!user) return
-      console.log(user)
+      const { user, userToken } = await res.json()
+      if (!user && !userToken) return
+      console.log(user, userToken)
 
       user && setUser(user)
 
@@ -91,7 +92,10 @@ const Login = () => {
                   />
                   <label htmlFor='inputPhone'>Password</label>
                 </div>
-                <div className='d-flex flex-row justify-content-center'>
+                <div className='d-flex flex-row justify-content-between align-items-center'>
+                  <Link href='/sign-up'>
+                    <a>New Here? Sign Up</a>
+                  </Link>
                   <button
                     className='btn-primary btn-lg bg-gradient'
                     type='submit'>

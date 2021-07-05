@@ -53,7 +53,7 @@ const SignUp = () => {
             jobSeeker: true
           }
         })
-      // data && window.location.assign('/login')
+      data && window.location.assign('/login')
     } catch (err) {
       console.error(err)
     }

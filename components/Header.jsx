@@ -4,7 +4,7 @@ import { Nav, Navbar, Button, Container } from 'react-bootstrap'
 import { JobContext } from '../contexts/JobContext'
 
 const Header = () => {
-  const { user } = useContext(JobContext)
+  const { user, setUser } = useContext(JobContext)
 
   return (
     <>
@@ -30,31 +30,19 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='ms-auto text-center bg-dark'>
+            <Nav className='mx-auto text-center bg-dark'>
               <Nav.Link href='/about'>About</Nav.Link>
               {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/training-programs'>Training</Nav.Link>
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
+              <Nav.Link href='/contact'>Contact</Nav.Link>
             </Nav>
             <Nav>
-              {user && (
+              {user ? (
                 <Button
                   onClick={async () => {
-                    const url = 'http://localhost:3000/auth/sign-out'
-                    const headers = new Headers()
-
-                    const params = {
-                      method: 'DELETE',
-                      headers: headers.set(
-                        'Authorization',
-                        `Bearer ${user.token}`
-                      )
-                    }
-                    const res = await fetch(url, params)
-
-                    const data = await res.json()
-                    console.log({ data })
+                    await setUser(null)
                   }}
                   as='a'
                   className='text-light bg-primary bg-gradient rounded mb-2'
@@ -62,15 +50,16 @@ const Header = () => {
                   size='lg'>
                   Log Out
                 </Button>
+              ) : (
+                <Button
+                  href='/login'
+                  as='a'
+                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  variant='primary'
+                  size='lg'>
+                  Log in
+                </Button>
               )}
-              <Button
-                as='a'
-                href='/contact'
-                className='text-light bg-primary bg-gradient rounded mb-2'
-                variant='primary'
-                size='lg'>
-                Contact
-              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

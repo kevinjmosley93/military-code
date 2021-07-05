@@ -3,6 +3,8 @@ import nc from 'next-connect'
 
 const User = require('../../../models/user')
 
+const jwt = require('jsonwebtoken')
+
 const bcrypt = require('bcrypt')
 
 const crypto = require('crypto')
@@ -33,13 +35,30 @@ const handler = nc().post(async (req, res) => {
     if (!isCorrectPass) {
       res.status(401).json({ msg: 'Password is not correct' })
     } else {
-      user.token = crypto.randomBytes(16).toString('hex')
+      user.token = crypto.randomBytes(64).toString('hex')
       await user.save()
     }
 
-    console.log({ user })
+    // console.log({ user })
+    const randomString = crypto.randomBytes(64).toString('hex')
 
-    if (user) return await res.status(200).json({ user: user.toObject() })
+    const userObj = {
+      _id: user._id,
+      email: user.email,
+      token: user.token
+    }
+
+    const token = jwt.sign(userObj, randomString)
+
+    if (!token) return
+
+    // console.log({ token })
+    res.setHeader(
+      'Set-Cookie',
+      `userToken=${token}; Expires=${Math.floor(Date.now() / 1000) + 60 * 60}`
+    )
+
+    await res.status(200).json({ user: user.toObject(), userToken: token })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
