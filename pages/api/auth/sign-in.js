@@ -55,10 +55,10 @@ export default async (req, res) => {
     // console.log({ token })
     await res.setHeader(
       'Set-Cookie',
-      cookie.serialize('token', token, {
+      cookie.serialize('SetToken', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV !== 'production',
-        maxAge: Math.floor(Date.now() / 1000) + 60 * 60,
+        secure: true,
+        maxAge: 60 * 60 * 24 * 7,
         sameSite: 'strict',
         path: '/'
       })
