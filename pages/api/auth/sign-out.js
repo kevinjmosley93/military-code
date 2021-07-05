@@ -1,5 +1,4 @@
 import dbConnect from '../../../lib/mongo'
-import nc from 'next-connect'
 
 const User = require('../../../models/user')
 
