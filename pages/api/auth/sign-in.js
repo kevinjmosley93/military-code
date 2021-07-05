@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/mongo'
-import nc from 'next-connect'
+import cookie from 'cookie'
 
 const User = require('../../../models/user')
 
@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt')
 
 const crypto = require('crypto')
 
-const handler = nc().post(async (req, res) => {
+export default async (req, res) => {
   if (req.method !== 'POST')
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
 
@@ -53,15 +53,21 @@ const handler = nc().post(async (req, res) => {
     if (!token) return
 
     // console.log({ token })
-    res.setHeader(
+    await res.setHeader(
       'Set-Cookie',
-      `userToken=${token}; Expires=${Math.floor(Date.now() / 1000) + 60 * 60}`
+      cookie.serialize('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== 'production',
+        maxAge: Math.floor(Date.now() / 1000) + 60 * 60,
+        sameSite: 'strict',
+        path: '/'
+      })
     )
+    const cookies = cookie.parse(req.headers.cookie || '')
+    // console.log({ cookies })
 
-    await res.status(200).json({ user: user.toObject(), userToken: token })
+    await res.status(200).json({ user: user.toObject(), userToken: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
-})
-
-export default handler
+}

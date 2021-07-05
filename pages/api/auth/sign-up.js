@@ -1,4 +1,3 @@
-import nc from 'next-connect'
 import dbConnect from '../../../lib/mongo'
 
 const User = require('../../../models/user')
@@ -7,7 +6,10 @@ const bcrypt = require('bcrypt')
 
 const saltRounds = 10
 
-const handler = nc().post(async (req, res) => {
+export default async (req, res) => {
+  if (req.method !== 'POST')
+    return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
+
   try {
     if (!req.body) return
 
@@ -36,6 +38,4 @@ const handler = nc().post(async (req, res) => {
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
-})
-
-export default handler
+}

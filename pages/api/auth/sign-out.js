@@ -5,8 +5,8 @@ const User = require('../../../models/user')
 
 const crypto = require('crypto')
 
-const handler = nc().post(async (req, res) => {
-  if (req.method !== 'POST')
+export default async (req, res) => {
+  if (req.method !== 'DELETE')
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
   try {
     if (!req.body) return
@@ -28,6 +28,4 @@ const handler = nc().post(async (req, res) => {
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
-})
-
-export default handler
+}

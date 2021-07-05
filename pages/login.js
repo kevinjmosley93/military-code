@@ -36,9 +36,10 @@ const Login = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
+      console.log(res.headers)
       const { user, userToken } = await res.json()
       if (!user && !userToken) return
-      console.log(user, userToken)
+      // console.log(user, userToken)
 
       user && setUser(user)
 
@@ -58,7 +59,7 @@ const Login = () => {
     form: { email, password }
   } = formInput
 
-  console.log(user)
+  // console.log(user)
 
   return (
     <section className='py-5'>
