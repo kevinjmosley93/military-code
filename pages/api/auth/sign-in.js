@@ -48,23 +48,12 @@ export default async (req, res) => {
       token: user.token
     }
 
-    const token = jwt.sign(userObj, randomString)
+    const token = jwt.sign(userObj, randomString, { expiresIn: 60 * 5 })
 
     if (!token) return
 
     // console.log({ token })
-    await res.setHeader(
-      'Set-Cookie',
-      cookie.serialize('SetToken', token, {
-        httpOnly: true,
-        secure: true,
-        maxAge: 60 * 60 * 24 * 7,
-        sameSite: 'strict',
-        path: '/'
-      })
-    )
-    const cookies = cookie.parse(req.headers.cookie || '')
-    // console.log({ cookies })
+    await res.setHeader('Authorization', `Bearer ${token}`)
 
     await res.status(200).json({ user: user.toObject(), userToken: true })
   } catch (err) {

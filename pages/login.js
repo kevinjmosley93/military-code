@@ -41,7 +41,7 @@ const Login = () => {
       if (!user && !userToken) return
       // console.log(user, userToken)
 
-      user && setUser(user)
+      userToken && setUser(user)
 
       user &&
         setFormInput({
