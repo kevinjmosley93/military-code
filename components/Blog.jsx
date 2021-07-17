@@ -5,9 +5,9 @@ import Image from 'next/image'
 const Blog = () => {
   const [blogData, setData] = useState([])
   const fetchData = async () => {
-    const res = await fetch(`${window.location.href}api/get-blog`)
+    const res = await fetch(`${window.location.origin}/api/get-blog`)
     const data = await res.json()
-    // console.log('this is data', data)
+    console.log('this is data', data)
     setData(data)
   }
   useEffect(() => {
@@ -43,9 +43,7 @@ const Blog = () => {
                   alt='cover img'
                 />
                 <div className='card-body p-4'>
-                  <a
-                    className='text-decoration-none link-dark stretched-link'
-                    href='#'>
+                  <a className='text-decoration-none link-dark stretched-link'>
                     <h5 className='card-title mb-3'>{title}</h5>
                   </a>
                   <p className='card-text text-truncate mb-0'>{body}</p>
