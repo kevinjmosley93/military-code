@@ -91,3 +91,12 @@ a {
 .feature-icon i {
   font-size: xx-large;
 }
+.text-truncate-container {
+  width: 100%;
+}
+.text-truncate-container p {
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
