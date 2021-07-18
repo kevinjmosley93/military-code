@@ -5,19 +5,20 @@ import moment from 'moment'
 const Title = ({ data }) => {
   const {
     id,
-    fields: { title, body, author, createdAt, img }
+    fields: { title, body, author, createdAt, img, blogImg, tags, ytLink }
   } = data
 
   // console.log({ blog: data })
   return (
     <div
       style={{
-        wordWrap: 'break-word'
+        wordWrap: 'break-word',
+        padding: '0 2rem'
       }}
-      className='container my-3'>
-      <h1 className='text-center'>{title}</h1>
+      className='container '>
+      <h1 className='mt-5'>{title}</h1>
       <span className='row'>
-        <div className='d-flex align-items-center my-4'>
+        <div className='d-flex align-items-center my-3'>
           <Image
             width={40}
             height={40}
@@ -36,7 +37,33 @@ const Title = ({ data }) => {
           </div>
         </div>
       </span>
-      <p className='text-justify mt-3'>{body}</p>
+      <div className='d-flex flex-row justify-content-start gap-2'>
+        {tags.length > 0 &&
+          tags.map(tag => <span className='badge bg-primary px-2'>{tag}</span>)}
+      </div>
+      <div>
+        <Image
+          width={1076}
+          height={600}
+          id='blogImg'
+          className='img-fluid rounded mt-4'
+          src={
+            blogImg ||
+            'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+          }
+          alt='Author Img'
+        />
+        <p className='mt-3'>{body}</p>
+        <iframe
+          width='100%'
+          height='515'
+          src={ytLink}
+          title='YouTube video player'
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowfullscreen
+        />
+      </div>
     </div>
   )
 }

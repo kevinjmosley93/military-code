@@ -51,7 +51,7 @@ const Index = () => {
           <JobSearch />
         </div>
       </div>
-      <div className='text-dark py-5'>
+      <div id='top' className='text-dark py-5'>
         <h1 className='text-center'>Jobs</h1>
         <div className=' container'>
           <div className='row my-5'>

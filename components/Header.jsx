@@ -17,13 +17,13 @@ const Header = () => {
         style={{
           fontWeight: '700',
           padding: '0',
-          fontSize: '1.5rem'
+          fontSize: '1rem'
         }}>
         <Container className='d-flex flex-md-row'>
           <Navbar.Brand href='/'>
             <Image
               width={100}
-              height={65}
+              height={60}
               alt='logo'
               src='https://i.imgur.com/fAo3uvq.png'
             />
@@ -31,6 +31,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='mx-auto text-center bg-dark'>
+              <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='/about'>About</Nav.Link>
               {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
@@ -56,7 +57,7 @@ const Header = () => {
                   as='a'
                   className='text-light bg-primary bg-gradient rounded mb-2'
                   variant='primary'
-                  size='lg'>
+                  size='md'>
                   Log in
                 </Button>
               )}

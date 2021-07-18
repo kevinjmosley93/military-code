@@ -59,7 +59,7 @@ const Training = () => {
   // console.log({ training })
 
   return (
-    <div className='container py-2 h-100'>
+    <div id='top' className='container py-2 h-100'>
       <h1 className='text-center pt-4'>
         Training/Degree Programs near {location}
       </h1>

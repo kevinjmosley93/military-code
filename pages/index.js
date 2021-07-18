@@ -7,6 +7,7 @@ import Subscribe from '../components/Subscribe'
 import FeaturedJobs from '../components/FeaturedJobs'
 
 import { loadStripe } from '@stripe/stripe-js'
+import Video from '../components/Video'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Services />
         <Blog />
         <FeaturedJobs />
+        <Video />
         <Subscribe />
       </main>
     </>

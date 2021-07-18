@@ -33,7 +33,7 @@ const Resources = () => {
   return (
     <>
       <div className='mb-3 container'>
-        <div className='row container-fluid mt-3'>
+        <div id='top' className='row container-fluid mt-3'>
           <h1 className='text-center'>Job Centers Near {location}</h1>
           <div className='col-12 text-dark py-2'>
             <div className=' container'>

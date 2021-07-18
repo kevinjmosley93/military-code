@@ -35,6 +35,7 @@ export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {
           ) : (
             <a
               className='d-flex flex-row align-items-center'
+              href='#top'
               onClick={goToPreviousPage}>
               <i className='fa fa-arrow-circle-left' aria-hidden='true'></i>
             </a>
@@ -42,6 +43,7 @@ export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {
           {getPaginationGroup().map((item, index) => (
             <a
               key={index}
+              href='#top'
               onClick={changePage}
               style={{ paddingInline: '.3rem' }}
               className={` ${
@@ -55,6 +57,7 @@ export default function Pagination({ data, pageLimit = 10, dataLimit = 10 }) {
           ) : (
             <a
               className='d-flex flex-row align-items-center'
+              href='#top'
               onClick={goToNextPage}>
               <i className='fa fa-arrow-circle-right' aria-hidden='true'></i>
             </a>

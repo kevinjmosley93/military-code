@@ -50,14 +50,12 @@ const Blog = () => {
                   <div className='card-body p-4 d-flex flex-column justify-content-between'>
                     <Link href={`/blog/${title}`}>
                       <a className='text-decoration-none link-dark stretched-link'>
-                        <h4 className='card-title mb-3 text-truncate'>
-                          {title}
-                        </h4>
+                        <h5 className='card-title mb-3'>{title}</h5>
                       </a>
                     </Link>
                     <span className='text-truncate-container'>
                       <p
-                        style={{ fontSize: '.6rem' }}
+                        style={{ fontSize: '.8rem' }}
                         className='card-text m-0'>
                         {body}
                       </p>
