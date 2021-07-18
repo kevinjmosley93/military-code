@@ -42,9 +42,9 @@ const Title = ({ data }) => {
 }
 
 export async function getStaticPaths() {
-  const url = 'http://localhost:3000'
+  // const url = 'http://localhost:3000'
   // Call an external API endpoint to get posts
-  const res = await fetch(`${url}/api/get-blog`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blog`)
   const data = await res.json()
 
   console.log({ data })
@@ -59,9 +59,9 @@ export async function getStaticPaths() {
 // This also gets called at build time
 export async function getStaticProps({ params }) {
   console.log({ params })
-  const url = 'http://localhost:3000'
+  // const url = 'http://localhost:3000'
 
-  const res = await fetch(`${url}/api/get-blog`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blog`)
   const data = await res.json()
 
   const newData = data.find(({ fields: { title } }) => title == params.title)
