@@ -4,7 +4,6 @@ import moment from 'moment'
 
 const Title = ({ data }) => {
   const {
-    id,
     fields: { title, body, author, createdAt, img, blogImg, tags, ytLink }
   } = data
 
@@ -37,10 +36,14 @@ const Title = ({ data }) => {
           </div>
         </div>
       </span>
-      <div className='d-flex flex-row justify-content-start gap-2'>
+      <div
+        style={{
+          width: '100%',
+          fontSize: '.7rem'
+        }}>
         {tags.length > 0 &&
           tags.map((tag, idx) => (
-            <span key={idx} className='badge bg-primary px-2'>
+            <span key={idx} className='badge rounded-pill bg-primary px-3 me-1'>
               {tag}
             </span>
           ))}
@@ -59,6 +62,7 @@ const Title = ({ data }) => {
         />
         <p className='mt-3'>{body}</p>
         <iframe
+          className='mb-5'
           width='100%'
           height='515'
           src={ytLink}
@@ -74,20 +78,19 @@ const Title = ({ data }) => {
 
 export async function getStaticPaths() {
   // const url = 'http://localhost:3000'
-  // Call an external API endpoint to get posts
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blog`)
   const data = await res.json()
 
-  console.log({ data })
+  // console.log({ data })
 
-  const paths = data.map(({ id, fields: { title } }) => ({
-    params: { title }
+  const paths = data.map(({ fields: { slug } }) => ({
+    params: { slug }
   }))
 
   return { paths, fallback: false }
 }
 
-// This also gets called at build time
 export async function getStaticProps({ params }) {
   console.log({ params })
   // const url = 'http://localhost:3000'
@@ -95,13 +98,13 @@ export async function getStaticProps({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blog`)
   const data = await res.json()
 
-  const newData = data.find(({ fields: { title } }) => title == params.title)
+  const newData = data.find(({ fields: { slug } }) => slug === params.slug)
 
-  console.log({ newData })
+  // console.log({ newData })
 
   if (!newData) return
 
-  console.log({ postData: newData })
+  // console.log({ postData: newData })
 
   return { props: { data: newData } }
 }

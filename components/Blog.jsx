@@ -17,25 +17,29 @@ const Blog = () => {
   }, [])
 
   const blog = blogData.map(
-    ({ id, fields: { title, body, author, createdAt, img, blogImg } }) => ({
+    ({
+      id,
+      fields: { title, body, author, createdAt, img, blogImg, slug }
+    }) => ({
       id,
       title,
       body,
       createdAt,
       author,
       img,
-      blogImg
+      blogImg,
+      slug
     })
   )
-  // console.log({ blog })
+  console.log({ blog })
   return (
     <div className='container'>
       <h1 className='text-center mt-3'>Recent Posts</h1>
-      <div className='row my-5 gx-5 w-100 mx-auto'>
+      <div className='row my-3 gx-5 w-100 mx-auto'>
         {blog &&
           blog.map(
-            ({ id, title, body, createdAt, author, img, blogImg }, idx) => (
-              <div key={idx} className='col-lg-4 mb-5'>
+            ({ id, title, body, createdAt, author, img, blogImg, slug }) => (
+              <div key={id} className='col-lg-4 mb-5'>
                 <div className='card h-100 shadow border-0'>
                   <Image
                     className='rounded'
@@ -48,7 +52,7 @@ const Blog = () => {
                     alt='cover img'
                   />
                   <div className='card-body p-4 d-flex flex-column justify-content-between'>
-                    <Link href={`/blog/${title}`}>
+                    <Link href={`/blog/${slug}`}>
                       <a className='text-decoration-none link-dark stretched-link'>
                         <h5 className='card-title mb-3'>{title}</h5>
                       </a>
@@ -81,6 +85,13 @@ const Blog = () => {
                           </div>
                         </div>
                       </div>
+                      <Link href={`/blog/${slug}`}>
+                        <a className='text-decoration-none link-primary stretched-link'>
+                          <span style={{ fontSize: '.7rem' }}>
+                            Read Post &#10230;
+                          </span>
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
