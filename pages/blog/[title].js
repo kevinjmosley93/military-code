@@ -39,7 +39,11 @@ const Title = ({ data }) => {
       </span>
       <div className='d-flex flex-row justify-content-start gap-2'>
         {tags.length > 0 &&
-          tags.map(tag => <span className='badge bg-primary px-2'>{tag}</span>)}
+          tags.map((tag, idx) => (
+            <span key={idx} className='badge bg-primary px-2'>
+              {tag}
+            </span>
+          ))}
       </div>
       <div>
         <Image
@@ -61,7 +65,7 @@ const Title = ({ data }) => {
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          allowfullscreen
+          allowFullScreen
         />
       </div>
     </div>
