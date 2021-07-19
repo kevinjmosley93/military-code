@@ -38,9 +38,9 @@ const Login = () => {
       }
       const res = await fetch(url, params)
       console.log({ body })
-      const { done } = await res.json()
+      const { user } = await res.json()
 
-      done &&
+      user &&
         setFormInput({
           form: {
             email: '',
@@ -56,7 +56,7 @@ const Login = () => {
     form: { email, password }
   } = formInput
 
-  // console.log(user)
+  console.log(user)
 
   return (
     <section className='py-5'>

@@ -32,7 +32,7 @@ export default async (req, res) => {
         success: false
       })
 
-    await res.status(201).json({ success: true })
+    res.status(201).json({ success: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }

@@ -1,12 +1,6 @@
-import dbConnect from '../../../lib/mongo'
-import cookie from 'cookie'
-
-const User = require('../../../models/user')
-
+import { setLoginSession } from '../../../lib/auth/auth'
+import { findUser } from '../../../lib/auth/user'
 const jwt = require('jsonwebtoken')
-
-const bcrypt = require('bcrypt')
-
 const crypto = require('crypto')
 
 export default async (req, res) => {
@@ -16,8 +10,6 @@ export default async (req, res) => {
   try {
     if (!req.body) return
 
-    await dbConnect()
-
     const { email, password } = await JSON.parse(req.body)
 
     if (!email || !password)
@@ -26,36 +18,30 @@ export default async (req, res) => {
       })
     console.log({ email })
 
-    const user = await User.findOne({ email })
-
+    const { user } = findUser(email, password)
     if (!user) return
 
-    const isCorrectPass = await bcrypt.compare(password, user.hashedPassword)
-
-    if (!isCorrectPass) {
-      res.status(401).json({ msg: 'Password is not correct' })
-    } else {
-      user.token = crypto.randomBytes(64).toString('hex')
-      await user.save()
-    }
-
-    // console.log({ user })
-    const randomString = crypto.randomBytes(64).toString('hex')
+    console.log({ user })
 
     const userObj = {
-      _id: user._id,
+      id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
       token: user.token
     }
 
-    const token = jwt.sign(userObj, randomString, { expiresIn: 60 * 5 })
+    const token = jwt.sign(userObj, process.env.TOKEN_SECRET, {
+      expiresIn: 60 * 5
+    })
 
     if (!token) return
 
-    // console.log({ token })
-    await res.setHeader('Authorization', `Bearer ${token}`)
+    console.log({ token })
 
-    await res.status(200).json({ user: user.toObject(), userToken: true })
+    const { session } = await setLoginSession(res, token)
+
+    await res.status(200).json({ user: user.toObject(), userToken: session })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
