@@ -9,11 +9,10 @@ export default async (req, res) => {
   if (req.method !== 'GET')
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
   try {
+    await dbConnect()
     if (!req.body) return
 
-    await dbConnect()
-
-    const { id } = await JSON.parse(req.body)
+    const { id } = JSON.parse(req.body)
 
     const user = await User.find({ _id: id })
     if (!user) return

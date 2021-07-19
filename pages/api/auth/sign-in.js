@@ -1,5 +1,7 @@
 import { setLoginSession } from '../../../lib/auth/auth'
 import { findUser } from '../../../lib/auth/user'
+import dbConnect from '../../../lib/mongo'
+
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 
@@ -8,9 +10,10 @@ export default async (req, res) => {
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
 
   try {
+    await dbConnect()
     if (!req.body) return
 
-    const { email, password } = await JSON.parse(req.body)
+    const { email, password } = JSON.parse(req.body)
 
     if (!email || !password)
       return res.status(500).json({
