@@ -1,11 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import { useUser } from '../lib/hooks'
 
 const Login = () => {
-  const user = useUser()
-  console.log({ userFront: user })
-
   const [formInput, setFormInput] = useState({
     form: {
       email: '',
@@ -34,6 +30,7 @@ const Login = () => {
       const url = `${window.location.origin}/api/auth/sign-in`
       const params = {
         method: 'POST',
+        headers: { 'Content-Type': 'application/josn' },
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
@@ -47,6 +44,7 @@ const Login = () => {
             password: ''
           }
         })
+      window.location.assign('/')
     } catch (err) {
       console.error(err)
     }
@@ -55,8 +53,6 @@ const Login = () => {
   const {
     form: { email, password }
   } = formInput
-
-  console.log(user)
 
   return (
     <section className='py-5'>

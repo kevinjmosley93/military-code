@@ -10,7 +10,12 @@ import 'font-awesome/css/font-awesome.min.css'
 import '../styles/globals.css'
 import '../styles/paginate.css'
 
+import { useUser } from '../lib/hooks'
+
 function MyApp({ Component, pageProps }) {
+  const user = useUser()
+  // console.log({ userFront: user })
+
   const router = useRouter()
 
   React.useEffect(() => {

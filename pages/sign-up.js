@@ -27,16 +27,18 @@ const SignUp = () => {
         formInput.form
 
       const body = {
-        firstName,
-        lastName,
         email,
         password,
-        passwordConfirm
+        passwordConfirm,
+        jobSeeker: true,
+        firstName,
+        lastName
       }
 
       const url = `${window.location.origin}/api/auth/sign-up`
       const params = {
         method: 'POST',
+        headers: { 'Content-Type': 'application/josn' },
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)

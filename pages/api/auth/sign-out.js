@@ -6,7 +6,7 @@ const User = require('../../../models/user')
 const crypto = require('crypto')
 
 export default async (req, res) => {
-  if (req.method !== 'GET')
+  if (req.method !== 'POST')
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
   try {
     await dbConnect()
@@ -14,17 +14,18 @@ export default async (req, res) => {
 
     const { id } = JSON.parse(req.body)
 
-    const user = await User.find({ _id: id })
+    const user = await User.findOne({ _id: id })
     if (!user) return
-    console.log(id)
+    console.log({ id })
 
-    user.token = crypto.randomBytes(24)
+    user.token = crypto.randomBytes(64).toString('hex')
 
-    const savedUser = await user.save()
+    const savedUser = user
     if (!savedUser) return
     removeTokenCookie(res)
+    console.log({ savedUser })
 
-    res.status(204).json({ msg: 'user signed-out', success: true })
+    await res.status(204).json({ msg: 'user signed out', success: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }

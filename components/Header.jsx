@@ -2,7 +2,28 @@ import React, { useContext } from 'react'
 import Image from 'next/image'
 import { Nav, Navbar, Button, Container } from 'react-bootstrap'
 
+import { useUser } from '../lib/hooks'
+
 const Header = () => {
+  const user = useUser()
+
+  const signOut = async id => {
+    const body = {
+      id: id
+    }
+    const url = `${window.location.origin}/api/auth/sign-out`
+    const params = {
+      method: 'POST',
+      body: JSON.stringify(body)
+    }
+    const res = await fetch(url, params)
+
+    console.log({ body })
+
+    const { message, success } = await res.json()
+
+    if (success) return window.location.assign('/')
+  }
   return (
     <>
       <Navbar
@@ -37,14 +58,28 @@ const Header = () => {
               <Nav.Link href='/contact'>Contact</Nav.Link>
             </Nav>
             <Nav>
-              <Button
-                href='#'
-                as='a'
-                className='text-light bg-primary bg-gradient rounded mb-2'
-                variant='primary'
-                size='md'>
-                Log in
-              </Button>
+              {user ? (
+                <Button
+                  onClick={async () => {
+                    await signOut(user.id)
+                  }}
+                  href='#'
+                  as='a'
+                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  variant='primary'
+                  size='md'>
+                  Log out
+                </Button>
+              ) : (
+                <Button
+                  href='#'
+                  as='a'
+                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  variant='primary'
+                  size='md'>
+                  Log in
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

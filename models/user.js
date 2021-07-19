@@ -4,7 +4,8 @@ const userSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     hashedPassword: {
       type: String,
@@ -15,24 +16,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       default: true
     },
-    firstName: {
-      type: String
-    },
-    lastName: {
-      type: String
-    },
-    token: {
-      type: String
-    },
-    jobs: {
-      type: Array
-    },
-    jobCenters: {
-      type: Array
-    },
-    training: {
-      type: Array
-    }
+    firstName: String,
+    lastName: String,
+    token: String,
+    jobs: Array,
+    jobCenters: Array,
+    training: Array
   },
   {
     timestamps: true,

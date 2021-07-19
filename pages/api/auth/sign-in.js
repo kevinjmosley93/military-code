@@ -13,7 +13,7 @@ export default async (req, res) => {
     await dbConnect()
     if (!req.body) return
 
-    const { email, password } = JSON.parse(req.body)
+    const { email, password } = await JSON.parse(req.body)
 
     if (!email || !password)
       return res.status(500).json({
@@ -21,7 +21,7 @@ export default async (req, res) => {
       })
     console.log({ email })
 
-    const { user } = findUser(email, password)
+    const { user } = await findUser(email, password)
     if (!user) return
 
     console.log({ user })
@@ -34,7 +34,7 @@ export default async (req, res) => {
       token: user.token
     }
 
-    const token = jwt.sign(userObj, process.env.TOKEN_SECRET, {
+    const token = jwt.sign(userObj, process.env.NEXT_PUBLIC_TOKEN_SECRET, {
       expiresIn: 60 * 5
     })
 
