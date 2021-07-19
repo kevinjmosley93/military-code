@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
 import Image from 'next/image'
 import { Nav, Navbar, Button, Container } from 'react-bootstrap'
-import { JobContext } from '../contexts/JobContext'
 
 const Header = () => {
-  const { user, setUser } = useContext(JobContext)
-
   return (
     <>
       <Navbar
@@ -40,27 +37,14 @@ const Header = () => {
               <Nav.Link href='/contact'>Contact</Nav.Link>
             </Nav>
             <Nav>
-              {user ? (
-                <Button
-                  onClick={async () => {
-                    await setUser(null)
-                  }}
-                  as='a'
-                  className='text-light bg-primary bg-gradient rounded mb-2'
-                  variant='primary'
-                  size='lg'>
-                  Log Out
-                </Button>
-              ) : (
-                <Button
-                  href='#'
-                  as='a'
-                  className='text-light bg-primary bg-gradient rounded mb-2'
-                  variant='primary'
-                  size='md'>
-                  Log in
-                </Button>
-              )}
+              <Button
+                href='#'
+                as='a'
+                className='text-light bg-primary bg-gradient rounded mb-2'
+                variant='primary'
+                size='md'>
+                Log in
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

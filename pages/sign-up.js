@@ -40,9 +40,9 @@ const SignUp = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      const data = await res.json()
-      console.log(data)
-      data &&
+      const { success } = await res.json()
+      console.log(success)
+      success &&
         setFormInput({
           form: {
             firstName: '',
@@ -53,7 +53,7 @@ const SignUp = () => {
             jobSeeker: true
           }
         })
-      data && window.location.assign('/login')
+      success && window.location.assign('/login')
     } catch (err) {
       console.error(err)
     }

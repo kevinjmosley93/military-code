@@ -1,10 +1,4 @@
-import dbConnect from '../../../lib/mongo'
-
-const User = require('../../../models/user')
-
-const bcrypt = require('bcrypt')
-
-const saltRounds = 10
+import { createUser } from '../../../lib/auth/user'
 
 export default async (req, res) => {
   if (req.method !== 'POST')
@@ -13,28 +7,32 @@ export default async (req, res) => {
   try {
     if (!req.body) return
 
-    await dbConnect()
-
-    const { email, password, passwordConfirm } = await JSON.parse(req.body)
+    const { firstName, lastName, email, password, passwordConfirm } =
+      await JSON.parse(req.body)
 
     if (!email || !password || password !== passwordConfirm)
       return res.status(500).json({
-        msg: 'somethng went wrong with you email or password!!'
+        msg: 'somethng went wrong with your email or password!!'
       })
     console.log({ email })
 
-    const hashedPass = await bcrypt.hash(password, saltRounds)
-
-    const userObj = {
+    const { user } = await createUser(
+      firstName,
+      lastName,
       email,
-      hashedPassword: hashedPass
-    }
-
-    const user = await User.create(userObj)
+      password,
+      passwordConfirm
+    )
 
     console.log({ user })
 
-    if (user) return await res.status(201).json({ user: user.toObject() })
+    if (!user)
+      return res.status(500).json({
+        msg: 'somethng went wrong with creating user!!TRY AGAIN!!',
+        success: false
+      })
+
+    await res.status(201).json({ success: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }

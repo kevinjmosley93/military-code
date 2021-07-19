@@ -7,8 +7,6 @@ import { fetchTraining } from '../lib/fetchTraining'
 const JobContext = createContext()
 
 const JobProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
-
   const [jobs, setJobs] = useState(null)
 
   const [training, setTraining] = useState(null)
@@ -119,9 +117,7 @@ const JobProvider = ({ children }) => {
         setJobCenters,
         getTraining,
         training,
-        setTraining,
-        user,
-        setUser
+        setTraining
       }}>
       {children}
     </JobContext.Provider>

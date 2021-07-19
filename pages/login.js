@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react'
 import Link from 'next/link'
-import { JobContext } from '../contexts/JobContext'
+import { useUser } from '../lib/hooks'
 
 const Login = () => {
-  const { user, setUser } = useContext(JobContext)
+  const user = useUser()
+  console.log({ userFront: user })
 
   const [formInput, setFormInput] = useState({
     form: {
@@ -36,14 +37,10 @@ const Login = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      console.log(res.headers)
-      const { user, userToken } = await res.json()
-      if (!user && !userToken) return
-      // console.log(user, userToken)
+      console.log({ body })
+      const { done } = await res.json()
 
-      userToken && setUser(user)
-
-      user &&
+      done &&
         setFormInput({
           form: {
             email: '',
