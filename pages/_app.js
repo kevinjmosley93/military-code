@@ -43,6 +43,17 @@ function MyApp({ Component, pageProps }) {
         </title>
         <link rel='canonical' href='https://employthevets.com' />
         <link rel='icon' href='/favicon.png' />
+
+        <link rel='icon' href='/favicon-32x32.png' sizes='32x32' />
+        <link rel='icon' href='/android-chrome-192x192.png' sizes='192x192' />
+        <link rel='icon' href='/android-chrome-512x512.png' sizes='512x512' />
+
+        <link
+          rel='apple-touch-icon'
+          href='/apple-touch-icon.png'
+          sizes='180x180'
+        />
+
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
@@ -69,7 +80,7 @@ function MyApp({ Component, pageProps }) {
           property='og:image'
           itemProp='image'
           name='image'
-          content='/soldier.png'
+          content='/favicon-32x32.png'
         />
         <meta
           property='og:keywords'

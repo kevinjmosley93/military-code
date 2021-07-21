@@ -24,7 +24,7 @@ class MyDocument extends Document {
             property='og:image'
             itemProp='image'
             name='image'
-            content='/soldier.png'
+            content='/favicon-32x32.png'
           />
           <meta
             property='og:keywords'
