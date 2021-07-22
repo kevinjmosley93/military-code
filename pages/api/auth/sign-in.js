@@ -28,8 +28,6 @@ export default async (req, res) => {
 
     const userObj = {
       id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
       email: user.email,
       token: user.token
     }
@@ -40,7 +38,7 @@ export default async (req, res) => {
 
     if (!token) return
 
-    console.log({ token })
+    // console.log({ token })
 
     const { session } = await setLoginSession(res, token)
 

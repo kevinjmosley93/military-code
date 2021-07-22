@@ -7,9 +7,9 @@ export default async function user(req, res) {
     if (!session) return
     const { user } = session
 
-    console.log({ sessionUser: user })
+    // console.log({ sessionUser: user })
 
-    res.status(200).json({ user })
+    await res.status(200).json({ user })
   } catch (error) {
     console.error(error)
     res.status(500).end('Authentication token is invalid, please log in')

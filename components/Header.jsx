@@ -14,16 +14,22 @@ const Header = () => {
     const url = `${window.location.origin}/api/auth/sign-out`
     const params = {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     }
     const res = await fetch(url, params)
+    if (!res) return
 
     console.log({ body })
 
-    const { message, success } = await res.json()
+    const { success, msg } = await res.json()
 
-    if (success) return window.location.assign('/')
+    if (!success) return
+
+    if (msg === 'user signed out' && success) return window.location.assign('/')
   }
+
+  const authRoutes = <Nav.Link href='/profile'>Profile</Nav.Link>
   return (
     <>
       <Navbar
@@ -56,6 +62,7 @@ const Header = () => {
               <Nav.Link href='/training-programs'>Training</Nav.Link>
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
               <Nav.Link href='/contact'>Contact</Nav.Link>
+              {user && authRoutes}
             </Nav>
             <Nav>
               {user ? (
@@ -72,7 +79,7 @@ const Header = () => {
                 </Button>
               ) : (
                 <Button
-                  href='#'
+                  href='login'
                   as='a'
                   className='text-light bg-primary bg-gradient rounded mb-2'
                   variant='primary'

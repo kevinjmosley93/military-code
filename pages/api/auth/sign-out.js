@@ -12,18 +12,18 @@ export default async (req, res) => {
     await dbConnect()
     if (!req.body) return
 
-    const { id } = JSON.parse(req.body)
+    const { id } = req.body
 
     const user = await User.findOne({ _id: id })
     if (!user) return
-    console.log({ id })
+    // console.log({ id })
 
     user.token = crypto.randomBytes(64).toString('hex')
 
     const savedUser = user
     if (!savedUser) return
     removeTokenCookie(res)
-    console.log({ savedUser })
+    // console.log({ savedUser })
 
     await res.status(204).json({ msg: 'user signed out', success: true })
   } catch (err) {

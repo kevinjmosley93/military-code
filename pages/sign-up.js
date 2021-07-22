@@ -23,14 +23,20 @@ const SignUp = () => {
   const handleForm = async e => {
     try {
       e.preventDefault()
-      const { firstName, lastName, email, password, passwordConfirm } =
-        formInput.form
+      const {
+        firstName,
+        lastName,
+        email,
+        password,
+        passwordConfirm,
+        jobSeeker
+      } = formInput.form
 
       const body = {
         email,
         password,
         passwordConfirm,
-        jobSeeker: true,
+        jobSeeker,
         firstName,
         lastName
       }
@@ -38,7 +44,7 @@ const SignUp = () => {
       const url = `${window.location.origin}/api/auth/sign-up`
       const params = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/josn' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)

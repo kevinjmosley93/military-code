@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const User = require('../../../models/user')
 const jwt = require('jsonwebtoken')
 
+import { createUser } from '../../../lib/auth/user'
 import dbConnect from '../../../lib/mongo'
 
 export default async (req, res) => {
@@ -13,32 +14,29 @@ export default async (req, res) => {
     if (!req.body) return
 
     const { firstName, lastName, email, password, passwordConfirm, jobSeeker } =
-      await JSON.parse(req.body)
+      await req.body
 
     if (!email || !password || password !== passwordConfirm)
       return res.status(500).json({
         msg: 'something went wrong with your email or password!!'
       })
-    console.log({ email })
+    console.log({ emailssssssssss: req.body })
 
-    const hashedPass = await bcrypt.hash(password, 25)
-
-    if (!hashedPass)
-      return res.status(500).json({
-        msg: 'something went wrong with your email or password!!'
-      })
-
-    const userObj = {
-      email,
-      hashedPassword: hashedPass,
-      jobSeeker,
+    const user = await createUser(
       firstName,
-      lastName
-    }
+      lastName,
+      email,
+      password,
+      passwordConfirm
+    )
 
-    await User.create(userObj)
+    if (!user)
+      return res.status(500).json({
+        msg: 'something went wrong with your user '
+      })
+    console.log({ userrrrrrr: user })
 
-    await res.status(201).json({ success: true })
+    res.status(201).json({ success: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }
