@@ -14,7 +14,7 @@ import { useUser } from '../lib/hooks'
 
 function MyApp({ Component, pageProps }) {
   const user = useUser()
-  // console.log({ userFront: user })
+  console.log({ userFront: user })
 
   const router = useRouter()
 

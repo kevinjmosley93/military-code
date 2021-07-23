@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { Nav, Navbar, Button, Container } from 'react-bootstrap'
 
@@ -11,16 +11,15 @@ const Header = () => {
     const body = {
       id: id
     }
+    console.log({ body })
     const url = `${window.location.origin}/api/auth/sign-out`
     const params = {
-      method: 'POST',
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     }
     const res = await fetch(url, params)
     if (!res) return
-
-    console.log({ body })
 
     const { success, msg } = await res.json()
 
@@ -56,8 +55,6 @@ const Header = () => {
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='mx-auto text-center bg-dark'>
               <Nav.Link href='/'>Home</Nav.Link>
-              <Nav.Link href='/about'>About</Nav.Link>
-              {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/training-programs'>Training</Nav.Link>
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
@@ -72,7 +69,7 @@ const Header = () => {
                   }}
                   href='#'
                   as='a'
-                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  className='text-light bg-primary bg-gradient rounded'
                   variant='primary'
                   size='md'>
                   Log out
@@ -81,7 +78,7 @@ const Header = () => {
                 <Button
                   href='login'
                   as='a'
-                  className='text-light bg-primary bg-gradient rounded mb-2'
+                  className='text-light bg-primary bg-gradient rounded'
                   variant='primary'
                   size='md'>
                   Log in

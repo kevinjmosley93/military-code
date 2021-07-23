@@ -142,6 +142,22 @@ const Training = () => {
                               </p>
                             </div>
                           </div>
+                          {/* <span
+                            className='text-center'
+                            onClick={() => {
+                              console.log({
+                                ID,
+                                SchoolName,
+                                ProgramName,
+                                Address,
+                                City,
+                                StateAbbr,
+                                Zip,
+                                Phone
+                              })
+                            }}>
+                            Save for Later
+                          </span> */}
                         </div>
                       </div>
                     )

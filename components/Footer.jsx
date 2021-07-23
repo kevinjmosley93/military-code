@@ -24,20 +24,14 @@ const Footer = () => {
               <li>
                 <a href='/about'>About Us</a>
               </li>
-              {/* <li>
-                <a href='/blog'>Blog</a>
-              </li> */}
               <li>
-                <a href='/jobs'>Jobs</a>
+                <a href='/blog'>Blog</a>
               </li>
               <li>
                 <a href='privacy-policy'>Privacy Policy</a>
               </li>
               <li>
                 <a href='/donation-policy'>Donation Policy</a>
-              </li>
-              <li>
-                <a href='/contact'>Contact us</a>
               </li>
             </ul>
           </Col>

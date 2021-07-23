@@ -1,7 +1,12 @@
 import React from 'react'
+import Blog from '../../components/Blog'
 
 const Index = () => {
-  return <div>blog index page</div>
+  return (
+    <div className='container'>
+      <Blog />
+    </div>
+  )
 }
 
 export default Index

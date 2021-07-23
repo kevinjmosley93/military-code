@@ -6,7 +6,7 @@ const User = require('../../../models/user')
 const crypto = require('crypto')
 
 export default async (req, res) => {
-  if (req.method !== 'POST')
+  if (req.method !== 'DELETE')
     return res.status(500).json({ msg: 'METHOD NOT ALLOWED' })
   try {
     await dbConnect()
@@ -25,7 +25,7 @@ export default async (req, res) => {
     removeTokenCookie(res)
     // console.log({ savedUser })
 
-    await res.status(204).json({ msg: 'user signed out', success: true })
+    await res.status(200).json({ msg: 'user signed out', success: true })
   } catch (err) {
     console.error(`THERE WAS AN ERRORR!!: ${err}`)
   }

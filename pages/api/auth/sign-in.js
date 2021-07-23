@@ -13,7 +13,7 @@ export default async (req, res) => {
     await dbConnect()
     if (!req.body) return
 
-    const { email, password } = await JSON.parse(req.body)
+    const { email, password } = await req.body
 
     if (!email || !password)
       return res.status(500).json({
@@ -22,9 +22,10 @@ export default async (req, res) => {
     console.log({ email })
 
     const { user } = await findUser(email, password)
+
     if (!user) return
 
-    console.log({ user })
+    // console.log({ user })
 
     const userObj = {
       id: user._id,

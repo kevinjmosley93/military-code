@@ -11,7 +11,7 @@ const Profile = () => {
       </div>
     )
   return (
-    <div className='container'>
+    <div className='container my-5'>
       <h1 className='text-center'>Profile for {user.email}</h1>
     </div>
   )

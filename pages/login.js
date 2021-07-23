@@ -30,7 +30,7 @@ const Login = () => {
       const url = `${window.location.origin}/api/auth/sign-in`
       const params = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/josn' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)

@@ -7,11 +7,12 @@ export default async function user(req, res) {
     if (!session) return
     const { user } = session
 
+    if (!user) return
+
     // console.log({ sessionUser: user })
 
     await res.status(200).json({ user })
   } catch (error) {
     console.error(error)
-    res.status(500).end('Authentication token is invalid, please log in')
   }
 }

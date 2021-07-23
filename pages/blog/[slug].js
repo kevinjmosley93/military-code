@@ -60,7 +60,13 @@ const Title = ({ data }) => {
           }
           alt='Author Img'
         />
-        <p className='mt-3'>{body}</p>
+        <p
+          style={{
+            lineHeight: '3'
+          }}
+          className='mt-3'>
+          {body}
+        </p>
         <iframe
           className='mb-5'
           width='100%'
