@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
 import JobCenterSearch from '../components/JobCenterSearch'
+import Loading from '../components/Loading'
 
 const Resources = () => {
   const [expanded, setExpanded] = useState(false)
@@ -22,9 +23,10 @@ const Resources = () => {
 
   if (!jobCenters)
     return (
-      <div>
-        <h1 className='text-center'>Job Conters Near {location}</h1>
-        <p>Loading.......</p>
+      <div className='conatiner py-5'>
+        <div>
+          <Loading />
+        </div>
       </div>
     )
 

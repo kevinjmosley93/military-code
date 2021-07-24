@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+import Loading from '../components/Loading'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
 
@@ -48,11 +49,8 @@ const Training = () => {
 
   if (!training)
     return (
-      <div className='container py-2 h-100'>
-        <h1 className='text-center'>
-          Training/Degree Programs near {location}
-        </h1>
-        <p>Loading.......</p>
+      <div className='container py-5'>
+        <Loading />
       </div>
     )
 

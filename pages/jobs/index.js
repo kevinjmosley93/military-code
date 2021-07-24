@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import JobSearch from '../../components/JobSearch'
+import Loading from '../../components/Loading'
 import { JobContext } from '../../contexts/JobContext'
 import Pagination from '../../helpers/paginate'
 
@@ -34,12 +35,17 @@ const Index = () => {
 
   if (!jobs)
     return (
-      <div className='pages__bg-overlay'>
-        <div className='vertical-center'>
-          <JobSearch />
+      <>
+        <div className='pages__bg-overlay'>
+          <div className='vertical-center'>
+            <JobSearch />
+          </div>
         </div>
-        <p>Loading.......</p>
-      </div>
+        <br />
+        <div className='conatiner py-5'>
+          <Loading />
+        </div>
+      </>
     )
 
   // console.log({ jobs })

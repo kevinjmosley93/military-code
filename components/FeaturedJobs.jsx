@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { JobContext } from '../contexts/JobContext'
 import JobSearch from './JobSearch'
 import Pagination from '../helpers/paginate'
+import Loading from './Loading'
 
 const FeaturedJobs = () => {
   const [expanded, setExpanded] = useState(false)
@@ -34,9 +35,8 @@ const FeaturedJobs = () => {
 
   if (!jobs)
     return (
-      <div>
-        <h1 className='text-center'>Featured Jobs</h1>
-        <p>Loading.......</p>
+      <div className='conatiner py-5'>
+        <Loading />
       </div>
     )
 

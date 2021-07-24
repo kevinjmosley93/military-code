@@ -2,6 +2,7 @@ import moment from 'moment'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Loading from './Loading'
 
 const Blog = () => {
   const [blogData, setData] = useState([])
@@ -32,6 +33,13 @@ const Blog = () => {
     })
   )
   console.log({ blog })
+  if (blog.length < 1)
+    return (
+      <div className='conatiner py-5'>
+        <Loading />
+      </div>
+    )
+
   return (
     <div className='container'>
       <h1 className='text-center mt-3'>Recent Posts</h1>

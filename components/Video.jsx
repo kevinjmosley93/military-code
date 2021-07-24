@@ -4,6 +4,12 @@ const Video = () => {
   return (
     <div className='container'>
       <h2 className='pb-2 text-center'>What V.E.T.S are saying</h2>
+      <p className='pb-2 text-center'>
+        <audio autoPlay={true} controls>
+          <source src='/etv-podcast.mp3' type='audio/mpeg' />
+          Your browser does not support the audio element.
+        </audio>
+      </p>
       <div className='row'>
         <div className='col-md-4'>
           <iframe
