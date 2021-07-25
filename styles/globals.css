@@ -100,3 +100,6 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.body-text p {
+  line-height: 2.5;
+}

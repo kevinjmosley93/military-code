@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import moment from 'moment'
+import ReactMarkdown from 'react-markdown'
 
 const Title = ({ data }) => {
   const {
@@ -60,13 +61,7 @@ const Title = ({ data }) => {
           }
           alt='Author Img'
         />
-        <p
-          style={{
-            lineHeight: '3'
-          }}
-          className='mt-3'>
-          {body}
-        </p>
+        <ReactMarkdown className='mt-3 body-text'>{body}</ReactMarkdown>
         <iframe
           className='mb-5'
           width='100%'

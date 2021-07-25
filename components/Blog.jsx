@@ -32,6 +32,11 @@ const Blog = () => {
       slug
     })
   )
+
+  const sortedPosts = blog.sort(
+    (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+  )
+
   console.log({ blog })
   if (blog.length < 1)
     return (
@@ -45,7 +50,7 @@ const Blog = () => {
       <h1 className='text-center mt-3'>Recent Posts</h1>
       <div className='row my-3 gx-5 w-100 mx-auto'>
         {blog &&
-          blog.map(
+          sortedPosts.map(
             ({ id, title, body, createdAt, author, img, blogImg, slug }) => (
               <div key={id} className='col-lg-4 mb-5'>
                 <div className='card h-100 shadow border-0'>
