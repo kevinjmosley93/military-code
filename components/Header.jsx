@@ -11,7 +11,7 @@ const Header = () => {
     const body = {
       id: id
     }
-    console.log({ body })
+    // console.log({ body })
     const url = `${window.location.origin}/api/auth/sign-out`
     const params = {
       method: 'DELETE',

@@ -2,8 +2,11 @@ import React, { useState, useContext, useEffect } from 'react'
 import Loading from '../components/Loading'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
+import { useUser } from '../lib/hooks'
+import saveTraining from '../lib/saveProfile'
 
 const Training = () => {
+  const user = useUser()
   const { getTraining, training } = useContext(JobContext)
 
   const [formInput, setFormInput] = useState({
@@ -12,6 +15,7 @@ const Training = () => {
       location: 'Tx'
     }
   })
+  const [done, setDone] = useState(null)
 
   const {
     form: { keyword, location }
@@ -23,6 +27,15 @@ const Training = () => {
       const updatedForm = { ...currState.form, ...updatedField }
       return { form: updatedForm }
     })
+  }
+  const handleClick = async (id, training) => {
+    const { success } = await saveTraining(id, training)
+
+    if (!success) return
+
+    setDone(success)
+
+    // console.log({ id, training })
   }
   const handleForm = async e => {
     try {
@@ -140,11 +153,11 @@ const Training = () => {
                               </p>
                             </div>
                           </div>
-                          {/* <span
+                          <a
+                            style={{ display: 'none' }}
                             className='text-center'
-                            onClick={() => {
-                              console.log({
-                                ID,
+                            onClick={async () => {
+                              const trainingObj = {
                                 SchoolName,
                                 ProgramName,
                                 Address,
@@ -152,10 +165,12 @@ const Training = () => {
                                 StateAbbr,
                                 Zip,
                                 Phone
-                              })
+                              }
+                              await handleClick(user._id, trainingObj)
+                              // console.log({ jobObj, ...user })
                             }}>
                             Save for Later
-                          </span> */}
+                          </a>
                         </div>
                       </div>
                     )

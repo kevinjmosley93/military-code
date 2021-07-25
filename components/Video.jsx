@@ -10,7 +10,7 @@ const Video = () => {
           width='100%'
           height='152'
           frameBorder='0'
-          allowTransparency='true'
+          allowtransparency='true'
           allow='encrypted-media'
         />
       </div>

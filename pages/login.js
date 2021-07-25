@@ -44,7 +44,7 @@ const Login = () => {
             password: ''
           }
         })
-      window.location.assign('/')
+      window.location.assign('/profile')
     } catch (err) {
       console.error(err)
     }
