@@ -25,7 +25,7 @@ const Header = () => {
 
     if (!success) return
 
-    if (msg === 'user signed out' && success) return window.location.assign('/')
+    if (success) return window.location.assign('/')
   }
 
   const authRoutes = <Nav.Link href='/profile'>Profile</Nav.Link>
@@ -65,7 +65,7 @@ const Header = () => {
               {user ? (
                 <Button
                   onClick={async () => {
-                    await signOut(user.id)
+                    await signOut(user._id)
                   }}
                   href='#'
                   as='a'
