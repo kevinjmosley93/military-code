@@ -52,7 +52,9 @@ const Services = () => {
               demand for. Search Jobs in industries that best match your skills.
             </p>
             <Link href='/jobs'>
-              <a style={{ margin: '0 auto' }} className='icon-link'>
+              <a
+                style={{ margin: '0 auto' }}
+                className='icon-link text-light btn bg-primary'>
                 View Jobs
               </a>
             </Link>
@@ -70,7 +72,7 @@ const Services = () => {
             <a
               onClick={handleShow}
               style={{ margin: '0 auto', cursor: 'pointer' }}
-              className='icon-link'>
+              className='icon-link text-light btn bg-primary'>
               Book Now
             </a>
           </div>
@@ -85,7 +87,9 @@ const Services = () => {
               the first step to landing a job.
             </p>
             <Link href='/job-centers'>
-              <a style={{ margin: '0 auto' }} className='icon-link'>
+              <a
+                style={{ margin: '0 auto' }}
+                className='icon-link text-light btn bg-primary'>
                 View Centers
               </a>
             </Link>
