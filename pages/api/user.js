@@ -11,7 +11,7 @@ export default async function user(req, res) {
 
     // console.log({ sessionUser: user })
 
-    await res.status(200).json({ user })
+    res.status(200).json({ user })
   } catch (error) {
     console.error(error)
   }

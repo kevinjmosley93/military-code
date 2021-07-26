@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import moment from 'moment'
 import ReactMarkdown from 'react-markdown'
 
@@ -72,6 +73,64 @@ const Title = ({ data }) => {
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
         />
+        {/* 
+        <div className='blog-comment'>
+          <form className='blog-comment__form'>
+            <div className='blog-comment__form-header'>
+              <h2>Share your thoughts</h2>
+              <Link href='/login'>
+                <a>Login to comment</a>
+              </Link>
+            </div>
+            <div>
+              <textarea
+                type='text'
+                placeholder='Enter your comment here...'
+                style={{ height: '5rem', width: '100%', marginTop: '1rem' }}
+              />
+            </div>
+          </form>
+          <div className='d-flex comment'>
+            <div className='flex-shrink-0'>
+              <Image
+                width={40}
+                height={40}
+                className='rounded-circle'
+                src={
+                  'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+                }
+                alt='Author Img'
+              />
+            </div>
+            <div className='small mx-2'>
+              <div className='fw-bold'>Billy</div>
+              <div className='text-muted'>
+                {moment().format('MMMM Do YYYY')}
+              </div>
+            </div>
+            <div className='flex-grow-1 ms-3'>This is comment text.</div>
+          </div>
+          <div className='d-flex comment'>
+            <div className='flex-shrink-0'>
+              <Image
+                width={40}
+                height={40}
+                className='rounded-circle'
+                src={
+                  'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+                }
+                alt='Author Img'
+              />
+            </div>
+            <div className='small mx-2'>
+              <div className='fw-bold'>Billy</div>
+              <div className='text-muted'>
+                {moment().format('MMMM Do YYYY')}
+              </div>
+            </div>
+            <div className='flex-grow-1 ms-3'>This is comment text.</div>
+          </div>
+        </div> */}
       </div>
     </div>
   )

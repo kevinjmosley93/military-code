@@ -103,3 +103,13 @@ a {
 .body-text p {
   line-height: 2.5;
 }
+
+.blog-comment__form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment {
+  padding: 1rem 0;
+}
