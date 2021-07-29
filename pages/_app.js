@@ -5,6 +5,9 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Head from 'next/head'
 import * as ga from '../lib/ga'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import '../styles/globals.css'
@@ -91,6 +94,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <ToastContainer />
       <Footer />
     </JobProvider>
   )

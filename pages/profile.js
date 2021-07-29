@@ -1,4 +1,5 @@
 import React from 'react'
+import ChangePassword from '../components/ChangePassword'
 import ProfileCard from '../components/ProfileCard'
 import { useUser } from '../lib/hooks'
 
@@ -15,10 +16,11 @@ const Profile = () => {
 
   return (
     <div className='container my-5'>
-      <h1 className='text-center'>Profile for {user.email}</h1>
       {user.training.map(training => (
         <ProfileCard key={training.id} training={training} />
       ))}
+
+      <ChangePassword user={user} />
     </div>
   )
 }
