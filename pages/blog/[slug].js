@@ -1,14 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import moment from 'moment'
 import ReactMarkdown from 'react-markdown'
+import { Button } from 'react-bootstrap'
+import { useUser } from '../../lib/hooks'
 
 const Title = ({ data }) => {
+  const user = useUser()
+  const [formInput, setFormInput] = useState({
+    form: {
+      commentBody: ''
+    }
+  })
+
   const {
     fields: { title, body, author, createdAt, img, blogImg, tags, ytLink }
   } = data
 
+  const handleChange = e => {
+    const updatedField = { [e.target.name]: e.target.value }
+    setFormInput(currState => {
+      const updatedForm = { ...currState.form, ...updatedField }
+      // console.log({ updatedForm })
+      return { form: updatedForm }
+    })
+  }
+
+  const handleForm = async e => {
+    try {
+      e.preventDefault()
+      const { commentBody } = formInput.form
+
+      const body = {
+        commentBody,
+        dateAdded: moment().format('MMMM Do YYYY')
+      }
+
+      const url = `${window.location.origin}/api/auth/post-comment`
+      const params = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      }
+      const res = await fetch(url, params)
+      console.log({ body })
+      const { user } = await res.json()
+
+      user &&
+        setFormInput({
+          form: {
+            commentBody: ''
+          }
+        })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const {
+    form: { commentBody }
+  } = formInput
   // console.log({ blog: data })
   return (
     <div
@@ -18,26 +70,31 @@ const Title = ({ data }) => {
       }}
       className='container '>
       <h1 className='mt-5'>{title}</h1>
-      <span className='row'>
-        <div className='d-flex align-items-center my-3'>
-          <Image
-            width={40}
-            height={40}
-            className='rounded-circle'
-            src={
-              img ||
-              'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
-            }
-            alt='Author Img'
-          />
-          <div className='small mx-2'>
-            <div className='fw-bold'>{author}</div>
-            <div className='text-muted'>
-              {moment(createdAt).format('MMMM Do YYYY')}
+      <div className='row'>
+        <div className='d-flex flex-row align-items-center justify-content-between'>
+          <div className='d-flex align-items-center my-3'>
+            <Image
+              width={40}
+              height={40}
+              className='rounded-circle'
+              src={
+                img ||
+                'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+              }
+              alt='Author Img'
+            />
+            <div className='small mx-2'>
+              <div className='fw-bold'>{author}</div>
+              <div className='text-muted'>
+                {moment(createdAt).format('MMMM Do YYYY')}
+              </div>
             </div>
           </div>
+          <Link href='/blog'>
+            <a>Back to Posts ⟶</a>
+          </Link>
         </div>
-      </span>
+      </div>
       <div
         style={{
           width: '100%',
@@ -66,27 +123,39 @@ const Title = ({ data }) => {
         <iframe
           className='mb-5'
           width='100%'
-          height='515'
+          height='515px'
           src={ytLink}
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
         />
-        {/* 
-        <div className='blog-comment'>
-          <form className='blog-comment__form'>
+
+        {/* <div className='blog-comment'>
+          <form onSubmit={handleForm} className='blog-comment__form'>
             <div className='blog-comment__form-header'>
               <h2>Share your thoughts</h2>
-              <Link href='/login'>
-                <a>Login to comment</a>
-              </Link>
+              {!user ? (
+                <Link href='/login'>
+                  <a>Login to comment</a>
+                </Link>
+              ) : (
+                <Button
+                  href='#'
+                  as='button'
+                  type='submit'
+                  className='text-light bg-primary bg-gradient rounded'
+                  variant='primary'
+                  size='md'>
+                  Post Comment
+                </Button>
+              )}
             </div>
             <div>
               <textarea
                 type='text'
                 placeholder='Enter your comment here...'
-                style={{ height: '5rem', width: '100%', marginTop: '1rem' }}
+                style={{ height: '7rem', width: '100%', marginTop: '1rem' }}
               />
             </div>
           </form>

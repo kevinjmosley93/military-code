@@ -76,7 +76,7 @@ const Header = () => {
                 </Button>
               ) : (
                 <Button
-                  href='login'
+                  href='/login'
                   as='a'
                   className='text-light bg-primary bg-gradient rounded'
                   variant='primary'

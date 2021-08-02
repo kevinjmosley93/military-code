@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Head from 'next/head'
 import * as ga from '../lib/ga'
 import { ToastContainer } from 'react-toastify'
+import ScrollToTop from 'react-scroll-to-top'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -92,6 +93,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property='og:author' name='author' content='MMGThemes' />
       </Head>
+      <ScrollToTop smooth />
       <Header />
       <Component {...pageProps} />
       <ToastContainer />
