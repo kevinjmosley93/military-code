@@ -34,20 +34,22 @@ const Title = ({ data }) => {
 
       const body = {
         commentBody,
-        dateAdded: moment().format('MMMM Do YYYY')
+        ...user
       }
 
-      const url = `${window.location.origin}/api/auth/post-comment`
+      const url = `${window.location.origin}/api/create-comment`
       const params = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      console.log({ body })
-      const { user } = await res.json()
+      const comment = await res.json()
+      if (!comment) return
 
-      user &&
+      console.log({ comment })
+
+      comment &&
         setFormInput({
           form: {
             commentBody: ''
@@ -132,44 +134,47 @@ const Title = ({ data }) => {
         />
 
         {/* <div className='blog-comment'>
-          <form onSubmit={handleForm} className='blog-comment__form'>
-            <div className='blog-comment__form-header'>
-              <h2>Share your thoughts</h2>
-              {!user ? (
-                <Link href='/login'>
-                  <a>Login to comment</a>
-                </Link>
-              ) : (
-                <Button
-                  href='#'
-                  as='button'
-                  type='submit'
-                  className='text-light bg-primary bg-gradient rounded'
-                  variant='primary'
-                  size='md'>
-                  Post Comment
-                </Button>
-              )}
-            </div>
-            <div>
-              <textarea
-                type='text'
-                placeholder='Enter your comment here...'
-                style={{ height: '7rem', width: '100%', marginTop: '1rem' }}
-              />
-            </div>
-          </form>
+          <div>
+            <form onSubmit={handleForm} className='blog-comment__form'>
+              <div className='blog-comment__form-header'>
+                <h2>Share your thoughts</h2>
+                {!user ? (
+                  <Link href='/login'>
+                    <a>Login to comment</a>
+                  </Link>
+                ) : (
+                  <Button
+                    as='button'
+                    type='submit'
+                    className='text-light bg-primary bg-gradient rounded'
+                    variant='primary'
+                    size='md'>
+                    Post Comment
+                  </Button>
+                )}
+              </div>
+              <div>
+                <textarea
+                  onChange={handleChange}
+                  name='commentBody'
+                  value={commentBody}
+                  type='text'
+                  placeholder='Enter your comment here...'
+                  style={{ height: '7rem', width: '100%', marginTop: '1rem' }}
+                />
+              </div>
+            </form>
+          </div>
           <div className='d-flex comment'>
             <div className='flex-shrink-0'>
-              <Image
-                width={40}
-                height={40}
-                className='rounded-circle'
-                src={
-                  'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+              <div
+                data-initials={
+                  user
+                    ? user.firstName.charAt(0).toUpperCase() ||
+                      user.email.charAt(0).toUpperCase()
+                    : 'B'
                 }
-                alt='Author Img'
-              />
+                className='rounded-circle'></div>
             </div>
             <div className='small mx-2'>
               <div className='fw-bold'>Billy</div>
@@ -181,15 +186,14 @@ const Title = ({ data }) => {
           </div>
           <div className='d-flex comment'>
             <div className='flex-shrink-0'>
-              <Image
-                width={40}
-                height={40}
-                className='rounded-circle'
-                src={
-                  'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+              <div
+                data-initials={
+                  user
+                    ? user.firstName.charAt(0).toUpperCase() ||
+                      user.email.charAt(0).toUpperCase()
+                    : 'B'
                 }
-                alt='Author Img'
-              />
+                className='rounded-circle'></div>
             </div>
             <div className='small mx-2'>
               <div className='fw-bold'>Billy</div>

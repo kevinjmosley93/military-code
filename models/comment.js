@@ -1,21 +1,18 @@
 const mongoose = require('mongoose')
 
-const questionSchema = new mongoose.Schema(
+const commentSchema = new mongoose.Schema(
   {
     content: {
       type: String,
       required: true
     },
-    timestamps: true,
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
     }
   },
-  {
-    timestamps: true
-  }
+  { timestamps: true }
 )
 
-module.exports = mongoose.model('question', questionSchema)
+module.exports = mongoose.model('comment', commentSchema)

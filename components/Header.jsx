@@ -55,6 +55,7 @@ const Header = () => {
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='mx-auto text-center bg-dark'>
               <Nav.Link href='/'>Home</Nav.Link>
+              <Nav.Link href='/blog'>Blog</Nav.Link>
               <Nav.Link href='/jobs'>Jobs</Nav.Link>
               <Nav.Link href='/training-programs'>Training</Nav.Link>
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>

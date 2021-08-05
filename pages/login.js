@@ -50,6 +50,30 @@ const Login = () => {
     }
   }
 
+  const handleGuestForm = async e => {
+    try {
+      e.preventDefault()
+      const body = {
+        email: 'demo@demo.com',
+        password: 'demo'
+      }
+
+      const url = `${window.location.origin}/api/auth/sign-in`
+      const params = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      }
+      const res = await fetch(url, params)
+      console.log({ body })
+      const { user } = await res.json()
+
+      user && window.location.assign('/profile')
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   const {
     form: { email, password }
   } = formInput
@@ -87,9 +111,14 @@ const Login = () => {
                   <label htmlFor='inputPhone'>Password</label>
                 </div>
                 <div className='d-flex flex-row justify-content-between align-items-center'>
-                  <Link href='/sign-up'>
-                    <a>New Here? Sign Up</a>
-                  </Link>
+                  <div className='d-flex flex-column'>
+                    <Link href='/sign-up'>
+                      <a>New Here? Sign Up</a>
+                    </Link>
+                    <a onClick={handleGuestForm} href='#'>
+                      Sign In As Guest
+                    </a>
+                  </div>
                   <button
                     className='btn-primary btn-lg bg-gradient'
                     type='submit'>

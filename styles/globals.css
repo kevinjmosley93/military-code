@@ -113,3 +113,18 @@ a {
 .comment {
   padding: 1rem 0;
 }
+[data-initials]:before {
+  background: #212529;
+  color: white;
+  opacity: 1;
+  content: attr(data-initials);
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
