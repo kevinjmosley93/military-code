@@ -73,28 +73,23 @@ const Title = ({ data }) => {
       className='container '>
       <h1 className='mt-5'>{title}</h1>
       <div className='row'>
-        <div className='d-flex flex-row align-items-center justify-content-between'>
-          <div className='d-flex align-items-center my-3'>
-            <Image
-              width={40}
-              height={40}
-              className='rounded-circle'
-              src={
-                img ||
-                'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
-              }
-              alt='Author Img'
-            />
-            <div className='small mx-2'>
-              <div className='fw-bold'>{author}</div>
-              <div className='text-muted'>
-                {moment(createdAt).format('MMMM Do YYYY')}
-              </div>
+        <div className='d-flex align-items-center my-3'>
+          <Image
+            width={40}
+            height={40}
+            className='rounded-circle'
+            src={
+              img ||
+              'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+            }
+            alt='Author Img'
+          />
+          <div className='small mx-2'>
+            <div className='fw-bold'>{author}</div>
+            <div className='text-muted'>
+              {moment(createdAt).format('MMMM Do YYYY')}
             </div>
           </div>
-          <Link href='/blog'>
-            <a>Back to Posts ⟶</a>
-          </Link>
         </div>
       </div>
       <div
@@ -109,31 +104,31 @@ const Title = ({ data }) => {
             </span>
           ))}
       </div>
-      <div>
-        <Image
-          width={1076}
-          height={600}
-          id='blogImg'
-          className='img-fluid rounded mt-4'
-          src={
-            blogImg ||
-            'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
-          }
-          alt='Author Img'
-        />
-        <ReactMarkdown className='mt-3 body-text'>{body}</ReactMarkdown>
-        <iframe
-          className='mb-5'
-          width='100%'
-          height='515px'
-          src={ytLink}
-          title='YouTube video player'
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        />
 
-        {/* <div className='blog-comment'>
+      <Image
+        width={1076}
+        height={600}
+        id='blogImg'
+        className='img-fluid rounded mt-4'
+        src={
+          blogImg ||
+          'https://dummyimage.com/40x40/000000/dbd2db.png&text=Placeholder'
+        }
+        alt='Author Img'
+      />
+      <ReactMarkdown className='mt-3 body-text'>{body}</ReactMarkdown>
+      <iframe
+        className='mb-5'
+        width='100%'
+        height='515px'
+        src={ytLink}
+        title='YouTube video player'
+        frameBorder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        allowFullScreen
+      />
+
+      {/* <div className='blog-comment'>
           <div>
             <form onSubmit={handleForm} className='blog-comment__form'>
               <div className='blog-comment__form-header'>
@@ -204,7 +199,6 @@ const Title = ({ data }) => {
             <div className='flex-grow-1 ms-3'>This is comment text.</div>
           </div>
         </div> */}
-      </div>
     </div>
   )
 }
