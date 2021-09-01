@@ -13,8 +13,8 @@ const about = () => {
                   We help veterans secure jobs before their separation date.
                 </h1>
                 <p
-                  style={{ lineHeight: '2.5rem' }}
-                  className='lead fw-normal text-justify text-muted mb-4'>
+                  style={{ lineHeight: '1.5' }}
+                  className='lead fw-normal text-left text-muted mb-4'>
                   We were started in 2020 by a U.S. Navy veteran. The pandemic
                   made it hard for people of all walks of life to adjust to the
                   hard times but our veterans always end up with the short end
@@ -31,7 +31,7 @@ const about = () => {
             </div>
             <div className='col-md-5'>
               <Image
-                className='rounded-circle'
+                className='rounded'
                 src='https://images.unsplash.com/photo-1509321954256-e03640ea1860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80'
                 width={500}
                 height={500}
