@@ -14,13 +14,13 @@ export default async (req, res) => {
       return res.status(500).json({
         msg: 'somethng went wrong with your comment!!'
       })
-    console.log({ commentBody, user })
+    // console.log({ commentBody, user })
 
     const comment = await createComment(commentBody)
 
     if (!comment) return
 
-    console.log({ comment })
+    // console.log({ comment })
   } catch (err) {
     console.error('SOMETHING HAPPEND WITH COMMENT', err)
   }

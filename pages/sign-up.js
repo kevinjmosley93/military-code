@@ -49,7 +49,7 @@ const SignUp = () => {
       }
       const res = await fetch(url, params)
       const { success } = await res.json()
-      console.log(success)
+      // console.log(success)
       success &&
         setFormInput({
           form: {

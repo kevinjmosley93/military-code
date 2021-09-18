@@ -19,7 +19,7 @@ export default async (req, res) => {
       return res.status(500).json({
         msg: 'somethng went wrong with you email or password!!'
       })
-    console.log({ email })
+    // console.log({ email })
 
     const { user } = await findUser(email, password)
 

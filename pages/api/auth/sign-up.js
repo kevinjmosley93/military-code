@@ -20,7 +20,7 @@ export default async (req, res) => {
       return res.status(500).json({
         msg: 'something went wrong with your email or password!!'
       })
-    console.log({ emailssssssssss: req.body })
+    // console.log({ emailssssssssss: req.body })
 
     const user = await createUser(
       firstName,
@@ -34,7 +34,7 @@ export default async (req, res) => {
       return res.status(500).json({
         msg: 'something went wrong with your user '
       })
-    console.log({ userrrrrrr: user })
+    // console.log({ userrrrrrr: user })
 
     res.status(201).json({ success: true })
   } catch (err) {

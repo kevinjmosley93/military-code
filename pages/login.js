@@ -34,7 +34,7 @@ const Login = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      console.log({ body })
+      // console.log({ body })
       const { user } = await res.json()
 
       user &&
@@ -65,7 +65,7 @@ const Login = () => {
         body: JSON.stringify(body)
       }
       const res = await fetch(url, params)
-      console.log({ body })
+      // console.log({ body })
       const { user } = await res.json()
 
       user && window.location.assign('/profile')

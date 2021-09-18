@@ -37,7 +37,7 @@ const Blog = () => {
     (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
   )
 
-  console.log({ blog })
+  // console.log({ blog })
   if (blog.length < 1)
     return (
       <div className='conatiner py-5'>

@@ -72,7 +72,7 @@ const Resources = () => {
                                 setUid(ID)
                                 // await handleClick(JvId)
                                 setExpanded(!expanded)
-                                console.log({ uid })
+                                // console.log({ uid })
                               } catch (err) {
                                 console.error(err)
                               }
