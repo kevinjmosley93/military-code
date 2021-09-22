@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import moment from 'moment'
 import ReactMarkdown from 'react-markdown'
+import { NextSeo } from 'next-seo'
 import { Button } from 'react-bootstrap'
 import { useUser } from '../../lib/hooks'
 
@@ -71,6 +72,10 @@ const Title = ({ data }) => {
         padding: '0 2rem'
       }}
       className='container '>
+      <NextSeo
+        title={title}
+        description='Follow the Veterans Equally Trying To Survive Blog to keep up with what veterans are thinking and saying around the community.'
+      />
       <h1 className='mt-5'>{title}</h1>
       <div className='row'>
         <div className='d-flex align-items-center my-3'>

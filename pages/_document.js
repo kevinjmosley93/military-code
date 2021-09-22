@@ -11,27 +11,12 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta
-            property='og:title'
-            name='title'
-            content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive - #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
-          />
-          <meta
-            property='og:description'
-            name='description'
-            content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive is the #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
-          />
-          <meta
-            property='og:image'
-            itemProp='image'
-            name='image'
-            content='/favicon-32x32.png'
-          />
-          <meta
             property='og:keywords'
             name='keywords'
             content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
           />
           <meta property='og:author' name='author' content='MMGThemes' />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

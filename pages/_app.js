@@ -7,7 +7,8 @@ import Head from 'next/head'
 import * as ga from '../lib/ga'
 import { ToastContainer } from 'react-toastify'
 import ScrollToTop from 'react-scroll-to-top'
-
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo.config'
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -39,25 +40,17 @@ function MyApp({ Component, pageProps }) {
   return (
     <JobProvider>
       <Head>
-        <title>
-          ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive - #1 Job
-          board for separating veterans & active duty military personnel to find
-          available jobs and resources to find employment before their
-          separation date.
-        </title>
-        <link rel='canonical' href='https://employthevets.com' />
-        <link rel='icon' href='/favicon.png' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
+        <link rel='icon' href='/favicon.png' />
         <link rel='icon' href='/favicon-32x32.png' sizes='32x32' />
         <link rel='icon' href='/android-chrome-192x192.png' sizes='192x192' />
         <link rel='icon' href='/android-chrome-512x512.png' sizes='512x512' />
-
         <link
           rel='apple-touch-icon'
           href='/apple-touch-icon.png'
           sizes='180x180'
         />
-
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
@@ -68,32 +61,9 @@ function MyApp({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap'
           rel='stylesheet'
         />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          name='title'
-          content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive - #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
-        />
-        <meta
-          property='og:description'
-          name='description'
-          content='ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive is the #1 Job board for separating veterans & active duty military personnel to find available jobs and resources to find employment before their separation date.'
-        />
-        <meta
-          property='og:image'
-          itemProp='image'
-          name='image'
-          content='/favicon-32x32.png'
-        />
-        <meta
-          property='og:keywords'
-          name='keywords'
-          content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
-        />
-        <meta property='og:author' name='author' content='MMGThemes' />
       </Head>
       <ScrollToTop smooth />
+      <DefaultSeo {...SEO} />
       <Header />
       <Component {...pageProps} />
       <ToastContainer />

@@ -1,10 +1,15 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 
 const PrivacyPolicy = () => {
   return (
     <div className='container my-5'>
+      <NextSeo
+        title='Privacy at ETV'
+        description='We respect your privacy and use the most up-to-date and secure technologies to protect your information.'
+      />
       <h1>Privacy Policy</h1>
-      <p>Last updated: July 03, 2021</p>
+      <p>Last updated: Sep 22, 2021</p>
       <p>
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the

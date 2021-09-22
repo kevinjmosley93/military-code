@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { NextSeo } from 'next-seo'
 import JobSearch from '../../components/JobSearch'
 import Loading from '../../components/Loading'
 import { JobContext } from '../../contexts/JobContext'
@@ -52,6 +53,10 @@ const Index = () => {
 
   return (
     <>
+      <NextSeo
+        title='ETV Featured Jobs'
+        description='Search for any job near your separation location in order to secure employment before you get out of the military.'
+      />
       <div className='pages__bg-overlay'>
         <div className='vertical-center'>
           <JobSearch />

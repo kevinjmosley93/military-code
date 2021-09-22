@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
+import { NextSeo } from 'next-seo'
 import { JobContext } from '../contexts/JobContext'
 import Pagination from '../helpers/paginate'
 import JobCenterSearch from '../components/JobCenterSearch'
@@ -35,6 +36,10 @@ const Resources = () => {
   return (
     <>
       <div className='mb-3 container'>
+        <NextSeo
+          title='ETV Featured Job Centers'
+          description='Search for any Job Center near your separation location. They will help guide your job search to meet your needs.'
+        />
         <div id='top' className='row container-fluid mt-3'>
           <h1 className='text-center'>Job Centers Near {location}</h1>
           <div className='col-12 text-dark py-2'>

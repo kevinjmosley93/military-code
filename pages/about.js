@@ -1,9 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
+import { NextSeo } from 'next-seo'
 
 const about = () => {
   return (
     <>
+      <NextSeo
+        title='About ETV'
+        description='We help veterans secure jobs before their separation date.'
+      />
       <section className='py-5'>
         <div className='container px-5'>
           <div className='row align-items-center'>

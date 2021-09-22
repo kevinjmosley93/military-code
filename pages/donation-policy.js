@@ -1,8 +1,13 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 
 const DonationPolicy = () => {
   return (
     <>
+      <NextSeo
+        title='Donate to ETV'
+        description='We appreciate all donations to the community as they go back into building the platform and helping veterans across the country.'
+      />
       <div className='px-2 py-3 my-2 text-center'>
         <h1 className='display-5 fw-bold'>Donation Policy</h1>
       </div>

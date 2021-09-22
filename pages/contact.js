@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NextSeo } from 'next-seo'
 
 const Contact = () => {
   const [formInput, setFormInput] = useState({
@@ -58,6 +59,10 @@ const Contact = () => {
 
   return (
     <section className='py-5'>
+      <NextSeo
+        title='Contact ETV'
+        description='Contact Us to setup a One on One with veterans that have found high paying careers after getting out of the military.'
+      />
       <div className='container px-5'>
         <div className='rounded-3 py-5 px-4 px-md-5 mb-5'>
           <div className='text-center mb-5'>
