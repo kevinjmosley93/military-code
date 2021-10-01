@@ -73,7 +73,7 @@ const Title = ({ data }) => {
       }}
       className='container '>
       <NextSeo
-        title={title}
+        title={`ETV Blog Post - ${title}`}
         description='Follow the Veterans Equally Trying To Survive Blog to keep up with what veterans are thinking and saying around the community.'
       />
       <h1 className='mt-5'>{title}</h1>
