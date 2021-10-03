@@ -16,7 +16,10 @@ class MyDocument extends Document {
             content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
           />
           <meta property='og:author' name='author' content='MMGThemes' />
-
+          <meta
+            name='p:domain_verify'
+            content='c3113b9f8dfeee9d40c84957ae35ff1d'
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
