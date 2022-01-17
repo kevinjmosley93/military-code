@@ -73,7 +73,7 @@ const Training = () => {
   return (
     <div id='top' className='container py-2 h-100'>
       <NextSeo
-        title='ETV Featured Training and Degree Programs'
+        title='ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive) Featured Training and Degree Programs'
         description='Search for any Training/Degree Program near your separation location in order to secure an employment path before you get out of the military.'
       />
       <h1 className='text-center pt-4'>

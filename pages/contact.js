@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <section className='py-5'>
       <NextSeo
-        title='Contact ETV'
+        title='Contact ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)'
         description='Contact Us to setup a One on One with veterans that have found high paying careers after getting out of the military.'
       />
       <div className='container px-5'>

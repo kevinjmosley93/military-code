@@ -13,7 +13,7 @@ class MyDocument extends Document {
           <meta
             property='og:keywords'
             name='keywords'
-            content='Tech, Software, Coding, Blog, Veterans, Hiring Veterans, Employment, Jobs, USAJobs, Government, GiBill, Military, Army, Navy, Marines, Coast Guard '
+            content='Civilian Jobs For Veterans, Veterans Looking For Jobs, Government Jobs After Military, High Paying Jobs For Veterans, Government Jobs For Veterans, Jobs After Leaving The Military, Best Jobs After The Military, Remote Jobs For Veterans, Work From Home Jobs For Veterans'
           />
           <meta property='og:author' name='author' content='MMGThemes' />
           <meta

@@ -3,9 +3,9 @@ import { NextSeo } from 'next-seo'
 
 const PrivacyPolicy = () => {
   return (
-    <div className='container my-5'>
+    <div className='container my-5 px-3'>
       <NextSeo
-        title='Privacy at ETV'
+        title='Privacy at ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)'
         description='We respect your privacy and use the most up-to-date and secure technologies to protect your information.'
       />
       <h1>Privacy Policy</h1>
@@ -189,12 +189,12 @@ const PrivacyPolicy = () => {
           Flash Cookies are not managed by the same browser settings as those
           used for Browser Cookies. For more information on how You can delete
           Flash Cookies, please read &quot;Where can I change the settings for
-          disabling, or deleting local shared objects?&quot; available at{' '}
+          disabling, or deleting local shared objects?&quot; available {' '}
           <a
             href='https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_'
             rel='noreferrer'
             target='_blank'>
-            https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
+            here.
           </a>
         </li>
         <li>

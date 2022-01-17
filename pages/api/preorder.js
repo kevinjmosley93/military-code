@@ -10,9 +10,9 @@ export default async function handler(req, res) {
             price_data: {
               currency: 'usd',
               product_data: {
-                name: '50% off PREORDER - Keys to Finding a Post Military Career Course',
+                name: '50% off - Keys to Finding a Post Military Career Course',
                 description:
-                  'PREORDER NOW AT HALF PRICE AND BE THE FIRST TO GET THE COURSE - Topics Covered: Step by step guide to showing you what you need to find a job before you get out of the military, Finding a career path, Creating a LinkedIn, Building a Resume, Applying for jobs, Building a Network, and Mindset. *Please ensure your email is correct so you can receive your copy of the course.'
+                  'BUY NOW AND GET THE COURSE AT HALF PRICE  - Topics Covered: Step by step guide to showing you what you need to find a job before you get out of the military, Finding a career path, Creating a LinkedIn, Building a Resume, Applying for jobs, Building a Network, and Mindset. *Please ensure your email is correct so you can receive your copy of the course.'
               },
               unit_amount: 2499
             },
@@ -31,6 +31,6 @@ export default async function handler(req, res) {
     }
   } else {
     res.setHeader('Allow', 'POST')
-    res.status(405).end('Method Not Allowed')
+    res.status(405).send('Method Not Allowed')
   }
 }

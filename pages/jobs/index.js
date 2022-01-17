@@ -54,7 +54,7 @@ const Index = () => {
   return (
     <>
       <NextSeo
-        title='ETV Featured Jobs'
+        title='ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive) Featured Jobs'
         description='Search for any job near your separation location in order to secure employment before you get out of the military.'
       />
       <div className='pages__bg-overlay'>

@@ -8,13 +8,11 @@ const Hero = () => {
       <Container className='vertical-center'>
         <div className=' d-flex flex-column justify-content-around px-4 py-2 text-center'>
           <h1 style={{ fontSize: '2rem' }} className='fw-bold mb-2'>
-            ETV | Employ The V.E.T.S - Veterans Equally Trying to Survive
+            ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)
           </h1>
-          <p style={{ fontSize: '1rem' }}>
-            #1 Job board for separating veterans & active duty military
-            personnel to find available jobs and resources to find employment
-            before their separation date.
-          </p>
+          <h2 style={{ fontSize: '.8rem', lineHeight:'1.4' }}>
+            #1 website for Veterans Looking For Jobs, Civilian Jobs For Veterans, Government Jobs After Military for Veterans, High Paying Jobs For Veterans, Jobs After Leaving The Military, Best Jobs After The Military,	Remote Jobs For Veterans, Work From Home Jobs For Veterans and much more.
+          </h2>
           <div className='d-grid gap-3 d-sm-flex mt-3 justify-content-sm-center'>
             <Link href='/about'>
               <Button

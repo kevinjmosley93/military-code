@@ -74,12 +74,12 @@ const PreSale = () => {
         onHide={handleClose}>
         <Modal.Header className='mx-auto'>
           <Modal.Title className='fw-bolder text-dark'>
-            50% off PREORDER - Keys to Finding a Post Military Career Course -{' '}
+            50% off - Keys to Finding a Post Military Career Course -{' '}
             <span className='badge bg-primary rounded-pill'>$24.99</span>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='lead fw-normal text-dark-50 text-left'>
-          <h3>PREORDER NOW AT HALF PRICE AND BE THE FIRST TO GET THE COURSE</h3>
+          <h3>GET THE COURSE FOR HALF PRICE </h3>
           <ul>
             <li>
               Step by step guide to showing you what you need to find a job
@@ -95,7 +95,7 @@ const PreSale = () => {
         </Modal.Body>
         <Modal.Footer className='d-flex flex-row justify-content-between'>
           <small className='text-center'>
-            *Your preorder fee serves as a donation to ETV. We appreciate all
+            *Your fee serves as a donation to ETV. We appreciate all
             donations and use it to invest into building the platform & helping
             more veterans.
             <br />
@@ -116,7 +116,7 @@ const PreSale = () => {
           </button>
           <form onSubmit={handleSubmit}>
             <button type='submit' className='btn-primary px-3 rounded'>
-              PREORDER NOW
+              ORDER NOW 50% OFF
             </button>
           </form>
         </Modal.Footer>

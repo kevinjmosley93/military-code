@@ -42,10 +42,10 @@ const Footer = () => {
             <div>
               {' '}
               <div>
-                ETV | Employ The V.E.T.S - Veterans Equally Trying To Survive
+              ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)
               </div>
               <a rel='noreferrer' href='mailto:militarythencode@gmail.com'>
-                info@employthevets.com
+                staff@employthevets.com
               </a>
             </div>
           </Col>
@@ -88,8 +88,7 @@ const Footer = () => {
             fontSize: '.6rem'
           }}>
           <p className='text-center py-3 text-light mb-0'>
-            {new Date().getFullYear()} All Rights Reserved | ETV - Employ The
-            V.E.T.S™
+            {new Date().getFullYear()} All Rights Reserved | ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)™
           </p>
         </Container>
       </Container>

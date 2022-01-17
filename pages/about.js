@@ -6,7 +6,7 @@ const about = () => {
   return (
     <>
       <NextSeo
-        title='About ETV'
+        title='About ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)'
         description='We help veterans secure jobs before their separation date.'
       />
       <section className='py-5'>

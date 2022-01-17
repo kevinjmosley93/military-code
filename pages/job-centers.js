@@ -24,7 +24,7 @@ const Resources = () => {
 
   if (!jobCenters)
     return (
-      <div className='conatiner py-5'>
+      <div className='container py-5'>
         <div>
           <Loading />
         </div>
