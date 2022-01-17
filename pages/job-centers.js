@@ -37,7 +37,7 @@ const Resources = () => {
     <>
       <div className='mb-3 container'>
         <NextSeo
-          title='ETV Featured Job Centers'
+          title='ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive) Featured Job Centers'
           description='Search for any Job Center near your separation location. They will help guide your job search to meet your needs.'
         />
         <div id='top' className='row container-fluid mt-3'>

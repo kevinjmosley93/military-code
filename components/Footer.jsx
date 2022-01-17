@@ -44,7 +44,7 @@ const Footer = () => {
               <div>
               ETV | Employ The Vets (V.E.T.S - Veterans Equally Trying to Survive)
               </div>
-              <a rel='noreferrer' href='mailto:militarythencode@gmail.com'>
+              <a rel='noreferrer' href='mailto:staff@employthevets.com'>
                 staff@employthevets.com
               </a>
             </div>
