@@ -34,7 +34,7 @@ const Footer = () => {
                 <a href='/donation-policy'>Donation Policy</a>
               </li>
               <li>
-                <a target='_blank' href='https://shop.employthevets.com'>Shop Our Merch</a>
+                <a target='_blank' href='https://shop.employthevets.com' rel="noreferrer">Shop Our Merch</a>
               </li>
             </ul>
           </Col>
