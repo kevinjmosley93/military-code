@@ -60,6 +60,7 @@ const Header = () => {
               <Nav.Link href='/training-programs'>Training</Nav.Link>
               <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
               <Nav.Link href='/contact'>Contact</Nav.Link>
+              <Nav.Link target='_blank' href='https://shop.employthevets.com'>Shop</Nav.Link>
               {user && authRoutes}
             </Nav>
             <Nav>
