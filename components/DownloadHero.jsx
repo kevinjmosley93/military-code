@@ -44,7 +44,6 @@ const DownloadHero = ({ topText, bottomText, btnText }) => {
         a.href = '/resume-site.zip';
         a.setAttribute("download", 'resume-site.zip');
         a.click();
-        window.location.href = "https://youtu.be/nvnPDwXpXwA";
       }
         
     } catch (err) {
