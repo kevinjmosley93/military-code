@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Button, Container } from 'react-bootstrap'
 
-const DownloadHero = ({ topText, bottomText, btnText }) => {
+const DownloadHero = ({ topText, bottomText, btnText, type }) => {
   const [formInput, setFormInput] = useState({
     form: {
       email: ''
@@ -23,7 +23,8 @@ const DownloadHero = ({ topText, bottomText, btnText }) => {
       const { email } = formInput.form
 
       const body = {
-        email
+        email,
+        type
       }
 
       const url = `${window.location.origin}/api/create-clients`
@@ -40,9 +41,25 @@ const DownloadHero = ({ topText, bottomText, btnText }) => {
             email: ''
           }
         })
+
+        const filename = (type) => {
+          switch (type) {
+            case "resume-site":
+              return "resume-site.zip";
+            case "resume":
+              return "resume-checklist.pdf";
+            case "linkedIn":
+              return "linkedIn-checklist.pdf";
+            case "subscribe":
+              "";
+            default:
+              "";
+          }
+        };
+
         const a = document.createElement("a");
-        a.href = '/resume-site.zip';
-        a.setAttribute("download", 'resume-site.zip');
+        a.href = '/' + filename(type);
+        a.setAttribute("download", filename(type));
         a.click();
       }
         

@@ -21,7 +21,8 @@ const Subscribe = () => {
       const { email } = formInput.form
 
       const body = {
-        email
+        email, 
+        type: 'subscribe'
       }
 
       const url = `${window.location.origin}/api/create-clients`
