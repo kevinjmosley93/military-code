@@ -38,7 +38,7 @@ export default async (req, res) => {
     const userMsg = `
     Hey ${email},\r\n
     \r\n
-    Thank you for being a part of our community and downloading one of our free resources. Please let us know if their is anything we can do for you to help propel your career and life to a new dimension.\r\n
+    Thank you for being a part of our community and downloading one of our free resources. Please let us know if there is anything we can do for you to help propel your career and life to a new dimension.\r\n
     \r\n
     Very Respectfully,\r\n 
     Employ The V.E.T.S Staff\r\n
@@ -50,7 +50,7 @@ export default async (req, res) => {
     const msg = `
 Hey ${email},\r\n
 \r\n
-Thank you for being a part of our community. Please let us know if their is anything we can do for you to help propel your career and life to a new dimension.\r\n
+Thank you for being a part of our community. Please let us know if there is anything we can do for you to help propel your career and life to a new dimension.\r\n
 \r\n
 Very Respectfully,\r\n 
 Employ The V.E.T.S Staff\r\n
