@@ -52,7 +52,7 @@ const Header = () => {
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse className='pb-4' id='responsive-navbar-nav'>
+          <Navbar.Collapse className='pb-4-md' id='responsive-navbar-nav'>
             <Nav className='mx-auto text-center text-uppercase bg-dark'>
               <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='/blog'>Blog</Nav.Link>
