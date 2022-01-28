@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Nav, Navbar, Button, Container } from 'react-bootstrap'
+import { Nav, Navbar, Button, Container, NavDropdown } from 'react-bootstrap'
 
 import { useUser } from '../lib/hooks'
 
@@ -25,7 +25,7 @@ const Header = () => {
 
     if (!success) return
 
-    if (success) return window.location.assign('/')
+    window.location.assign('/')
   }
 
   const authRoutes = <Nav.Link href='/profile'>Profile</Nav.Link>
@@ -52,15 +52,25 @@ const Header = () => {
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='mx-auto text-center bg-dark'>
+          <Navbar.Collapse className='pb-4' id='responsive-navbar-nav'>
+            <Nav className='mx-auto text-center text-uppercase bg-dark'>
               <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='/blog'>Blog</Nav.Link>
-              <Nav.Link href='/jobs'>Jobs</Nav.Link>
+              <NavDropdown
+                title="Jobs"
+              >
+                <NavDropdown.Item href='/jobs'>Jobs</NavDropdown.Item>
+              <NavDropdown.Item href='/job-centers'>Job Centers</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown
+                title="Free Resources"
+              >
+                <NavDropdown.Item href='/free-resources/free-resume-website'>Free Resume Website</NavDropdown.Item>
+              <NavDropdown.Item href='/free-resources/free-resume-checklist'>Free Resume Checklist</NavDropdown.Item>
+              <NavDropdown.Item href='/free-resources/free-linkedin-checklist'>Free LinkedIn Checklist</NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link href='/training-programs'>Training</Nav.Link>
-              <Nav.Link href='/job-centers'>Job Centers</Nav.Link>
               <Nav.Link href='/contact'>Contact</Nav.Link>
-              <Nav.Link target='_blank' href='https://shop.employthevets.com' rel="noreferrer">Shop</Nav.Link>
               {user && authRoutes}
             </Nav>
             <Nav>

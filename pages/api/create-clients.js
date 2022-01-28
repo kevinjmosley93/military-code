@@ -1,6 +1,7 @@
 import { table } from "../../lib/airtable/client";
-import { parseBody } from "next/dist/next-server/server/api-utils";
-const fs = require("fs");
+import fs from 'fs'
+import path from 'path'
+import getConfig from 'next/config'
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 require("dotenv").config();
@@ -48,16 +49,16 @@ export default async (req, res) => {
     <em>“We are committed to proving our veterans with the top resources to ensure that they get out of the military and become successful.”</em>
 `;
     const msg = `
-Hey ${email},\r\n
-\r\n
-Thank you for being a part of our community. Please let us know if there is anything we can do for you to help propel your career and life to a new dimension.\r\n
-\r\n
-Very Respectfully,\r\n 
-Employ The V.E.T.S Staff\r\n
-Visit Us: <a href='https://www.employthevets.com' target='_blank' rel='no referrer noopener'>employthevets.com</a>\r\n
-Shop Merchandise: <a href='https://shop.employthevets.com' target='_blank' rel='no referrer noopener'>shop.employthevets.com</a>\r\n
-\r\n
-<em>“We are committed to proving our veterans with the top resources to ensure that they get out of the military and become successful.”</em>
+    Hey ${email},\r\n
+    \r\n
+    Thank you for being a part of our community. Please let us know if there is anything we can do for you to help propel your career and life to a new dimension.\r\n
+    \r\n
+    Very Respectfully,\r\n 
+    Employ The V.E.T.S Staff\r\n
+    Visit Us: <a href='https://www.employthevets.com' target='_blank' rel='no referrer noopener'>employthevets.com</a>\r\n
+    Shop Merchandise: <a href='https://shop.employthevets.com' target='_blank' rel='no referrer noopener'>shop.employthevets.com</a>\r\n
+    \r\n
+    <em>“We are committed to proving our veterans with the top resources to ensure that they get out of the military and become successful.”</em>
 `;
     const filename = (type) => {
       switch (type) {
@@ -73,7 +74,14 @@ Shop Merchandise: <a href='https://shop.employthevets.com' target='_blank' rel='
           "";
       }
     };
+    const { serverRuntimeConfig } = getConfig();
 
+    const dir = path.join(
+      serverRuntimeConfig.PROJECT_ROOT,
+      "./public",
+      filename(type)
+    );
+    
     const downloadData =
       type !== "subscribe"
         ? {
@@ -85,7 +93,7 @@ Shop Merchandise: <a href='https://shop.employthevets.com' target='_blank' rel='
             attachments: [
               {
                 content: fs
-                  .readFileSync(`${__dirname}/${filename(type)}`)
+                  .readFileSync(dir)
                   .toString("base64"),
                 filename: filename(type),
                 type:
@@ -105,7 +113,7 @@ Shop Merchandise: <a href='https://shop.employthevets.com' target='_blank' rel='
             text: msg,
             html: msg.replace(/\r\n/g, "<br>"),
           };
-   const emailRes =  await sgMail.send(downloadData);
+    const emailRes = await sgMail.send(downloadData);
 
     // console.log({emailRes})
     res.statusCode = 200;

@@ -26,6 +26,9 @@ const Footer = () => {
               </li>
               <li>
                 <a href='/blog'>Blog</a>
+              </li>  
+              <li>
+                <a target='_blank' href='https://shop.employthevets.com' rel="noreferrer">Shop Our Merch</a>
               </li>
               <li>
                 <a href='privacy-policy'>Privacy Policy</a>
@@ -33,9 +36,7 @@ const Footer = () => {
               <li>
                 <a href='/donation-policy'>Donation Policy</a>
               </li>
-              <li>
-                <a target='_blank' href='https://shop.employthevets.com' rel="noreferrer">Shop Our Merch</a>
-              </li>
+            
             </ul>
           </Col>
           <Col className='mb-3' sm={6} md={3}>
