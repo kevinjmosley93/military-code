@@ -25,7 +25,7 @@ const Blog = () => {
   // console.log({ blog })
   if (blog.length < 1)
     return (
-      <div className="conatiner py-5">
+      <div className="container py-5">
         <Loading />
       </div>
     );
